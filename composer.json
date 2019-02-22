@@ -1,0 +1,13 @@
+{
+    "name": "ottlinger/mailform",
+    "description": "Send out a given mail form",
+    "type": "project",
+    "license": "Apache License 2.0",
+    "authors": [
+        {
+            "name": "Hugo Hirsch",
+            "email": "github@hugo-hirsch.de"
+        }
+    ],
+    "require": {}
+}
