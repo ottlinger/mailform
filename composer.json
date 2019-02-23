@@ -9,5 +9,10 @@
             "email": "github@hugo-hirsch.de"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": { 
+            "mailform\\": "src/"
+        }
+    }
 }
