@@ -25,6 +25,8 @@ tbd: https://getcomposer.org/doc/01-basic-usage.md#introduction
 
 #### PHPUnit setup
 
+https://phpunit.de/getting-started/phpunit-7.html
+
 ```
 $ composer require --dev phpunit/phpunit ^7
 ```
