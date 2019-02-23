@@ -14,5 +14,8 @@
         "psr-4": { 
             "mailform\\": "src/"
         }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6"
     }
 }
