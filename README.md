@@ -22,3 +22,10 @@ $ ./composer.phar init
 #### Project layout
 
 tbd: https://getcomposer.org/doc/01-basic-usage.md#introduction
+
+#### PHPUnit setup
+
+```
+$ composer require --dev phpunit/phpunit ^7
+```
+
