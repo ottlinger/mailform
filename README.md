@@ -23,6 +23,21 @@ $ ./composer.phar init
 
 tbd: https://getcomposer.org/doc/01-basic-usage.md#introduction
 
+##### Base structure
+
+following https://blog.nikolaposa.in.rs/2017/01/16/on-structuring-php-projects/
+
+```
+bin/              # command-line executables
+config/           # configuration files
+public/           # web server files, assets
+resources/        # other resource files
+src/              # PHP source code
+templates/        # view and layout files
+tests/            # test code
+```
+
+
 #### PHPUnit setup
 
 https://phpunit.de/getting-started/phpunit-7.html
