@@ -43,6 +43,7 @@ tests/            # test code
 https://phpunit.de/getting-started/phpunit-7.html
 
 ```
-$ composer require --dev phpunit/phpunit ^7
+$ composer require --dev phpunit/phpunit ^6 (PHP 7.0.x)
+$ composer require --dev phpunit/phpunit ^7 (needs a modern PHP)
 ```
 
