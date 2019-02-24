@@ -1,3 +1,4 @@
+*.cache
 composer.phar
 inc/config.ini.php
 .idea
