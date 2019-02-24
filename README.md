@@ -8,6 +8,12 @@ Send out a given mail form
 
 ## PHP project init
 
+### PHP
+
+Depending on your installation you may need to install a more recent PHP version,
+as I had to do on Ubuntu 18.0.4 LTS:
+https://tecadmin.net/install-php-7-on-ubuntu/
+
 ### Composer
 ```
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
