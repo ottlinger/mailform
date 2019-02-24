@@ -1,8 +1,10 @@
 # mailform
 Send out a given mail form
 
+## Badges - remote integrations
 [![Build Status](https://travis-ci.org/ottlinger/mailform.svg?branch=master)](https://travis-ci.org/ottlinger/mailform)
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/07b670b13aa944a789f40bbdf297b337)](https://www.codacy.com/app/github_25/mailform?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ottlinger/mailform&amp;utm_campaign=Badge_Grade)
 
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/ottlinger/mailform.svg?columns=all)](https://waffle.io/ottlinger/mailform)
 
