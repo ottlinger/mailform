@@ -1,6 +1,8 @@
 # mailform
 Send out a given mail form
 
+[![Build Status](https://travis-ci.org/ottlinger/mailform.svg?branch=master)](https://travis-ci.org/ottlinger/mailform)
+
 ## PHP project init
 
 ### Composer
