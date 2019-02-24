@@ -3,6 +3,9 @@ Send out a given mail form
 
 [![Build Status](https://travis-ci.org/ottlinger/mailform.svg?branch=master)](https://travis-ci.org/ottlinger/mailform)
 
+
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/ottlinger/mailform.svg?columns=all)](https://waffle.io/ottlinger/mailform)
+
 ## PHP project init
 
 ### Composer
