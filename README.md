@@ -9,7 +9,6 @@ Send out a given mail form
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/ottlinger/mailform.svg?columns=all)](https://waffle.io/ottlinger/mailform)
 
 ## PHP project init
-
 ### PHP
 
 Depending on your installation you may need to install a more recent PHP version,
@@ -17,11 +16,13 @@ as I had to do on Ubuntu 18.0.4 LTS:
 https://tecadmin.net/install-php-7-on-ubuntu/
 
 * Upgrade to PHP 7.2
+```
 sudo apt-get install -y php7.2
+```
 * Additional modules:
+```
 sudo apt install php7.2-xml php7.2-mbstring php7.2-mysql php7.2-intl php7.2-sqlite3 php-xdebug sqlite3
-
-
+```
 
 ### Composer
 ```
@@ -56,7 +57,6 @@ src/              # PHP source code
 templates/        # view and layout files
 tests/            # test code
 ```
-
 
 #### PHPUnit setup
 
