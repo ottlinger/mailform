@@ -14,6 +14,13 @@ Depending on your installation you may need to install a more recent PHP version
 as I had to do on Ubuntu 18.0.4 LTS:
 https://tecadmin.net/install-php-7-on-ubuntu/
 
+* Upgrade to PHP 7.2
+sudo apt-get install -y php7.2
+* Additional modules:
+sudo apt install php7.2-xml php7.2-mbstring php7.2-mysql php7.2-intl php7.2-sqlite3 php-xdebug sqlite3
+
+
+
 ### Composer
 ```
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
@@ -56,4 +63,3 @@ https://phpunit.de/getting-started/phpunit-8.html
 ```
 $ composer require --dev phpunit/phpunit ^8 (needs a modern PHP)
 ```
-
