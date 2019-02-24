@@ -45,10 +45,9 @@ tests/            # test code
 
 #### PHPUnit setup
 
-https://phpunit.de/getting-started/phpunit-7.html
+https://phpunit.de/getting-started/phpunit-8.html
 
 ```
-$ composer require --dev phpunit/phpunit ^6 (PHP 7.0.x)
-$ composer require --dev phpunit/phpunit ^7 (needs a modern PHP)
+$ composer require --dev phpunit/phpunit ^8 (needs a modern PHP)
 ```
 
