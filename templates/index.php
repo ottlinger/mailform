@@ -4,9 +4,13 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
+<?php
+require __DIR__ . '/../vendor/autoload.php';
+
+?>
 <html lang="en">
 <head>
-    <title>Mailform - English example template</title>
+    <title>Mailform - English example application</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="stylesheet" href="assets/css/main.css"/>
@@ -94,7 +98,7 @@
     <section id="footer">
         <div class="container">
             <ul class="copyright">
-                <li>&copy; Mailform, 2019. All rights reserved.</li>
+                <li>&copy; Mailform, <?php echo date("Y-m-d"); ?> All rights reserved.</li>
                 <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
                 <li>Served by <a href="https://www.github.com/ottlinger/mailform">Mailform</a> from <a
                         href="https://aiki-it.de">AIKI IT</a></li>
