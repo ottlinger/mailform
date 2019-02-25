@@ -65,3 +65,10 @@ https://phpunit.de/getting-started/phpunit-8.html
 ```
 $ composer require --dev phpunit/phpunit ^8 (needs a modern PHP)
 ```
+
+#### Templates
+
+The mail form is based on
+https://html5up.net/read-only/download
+which is available under [Creative Commons Attribution 3.0 Unported
+](./templates/LICENSE.txt)
