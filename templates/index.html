@@ -49,13 +49,34 @@
                     Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
                 <form method="post" action="#">
                     <div class="row gtr-uniform">
-                        <div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name"/>
+                        <div class="col-12">
+                            <select name="mailform-category" id="mailform-category">
+                                <option value="1">Contact request</option>
+                                <option value="2">Book request</option>
+                                <option value="3">Administration</option>
+                            </select>
+                        </div>
+                        <div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Your name"/>
                         </div>
                         <div class="col-6 col-12-xsmall"><input type="email" name="email" id="email"
-                                                                placeholder="Email"/></div>
-                        <div class="col-12"><input type="text" name="subject" id="subject" placeholder="Subject"/></div>
-                        <div class="col-12"><textarea name="message" id="message" placeholder="Message"
+                                                                placeholder="Your email"/></div>
+                        <div class="col-12"><textarea name="message" id="message" placeholder="Your message"
                                                       rows="6"></textarea></div>
+
+                        <p>Please click the middle button, in order to proof that you are not a robot:</p>
+                        <div class="col-4 col-12-medium">
+                            <input type="radio" id="demo-priority-low" name="demo-priority" checked>
+                            <label for="demo-priority-low">Left</label>
+                        </div>
+                        <div class="col-4 col-12-medium">
+                            <input type="radio" id="demo-priority-normal" name="demo-priority">
+                            <label for="demo-priority-normal">Middle</label>
+                        </div>
+                        <div class="col-4 col-12-medium">
+                            <input type="radio" id="demo-priority-high" name="demo-priority">
+                            <label for="demo-priority-high">Right</label>
+                        </div>
+
                         <div class="col-12">
                             <ul class="actions">
                                 <li><input type="submit" class="primary" value="Send Message"/></li>
@@ -82,25 +103,13 @@
                                 <input type="email" name="demo-email" id="demo-email" value="" placeholder="Email"/>
                             </div>
                             <div class="col-12">
-                                <select name="demo-category" id="demo-category">
+                                <select name="demo-category" id="demo-categories">
                                     <option value="">- Category -</option>
                                     <option value="1">Manufacturing</option>
                                     <option value="1">Shipping</option>
                                     <option value="1">Administration</option>
                                     <option value="1">Human Resources</option>
                                 </select>
-                            </div>
-                            <div class="col-4 col-12-medium">
-                                <input type="radio" id="demo-priority-low" name="demo-priority" checked>
-                                <label for="demo-priority-low">Low Priority</label>
-                            </div>
-                            <div class="col-4 col-12-medium">
-                                <input type="radio" id="demo-priority-normal" name="demo-priority">
-                                <label for="demo-priority-normal">Normal Priority</label>
-                            </div>
-                            <div class="col-4 col-12-medium">
-                                <input type="radio" id="demo-priority-high" name="demo-priority">
-                                <label for="demo-priority-high">High Priority</label>
                             </div>
                             <div class="col-6 col-12-medium">
                                 <input type="checkbox" id="demo-copy" name="demo-copy">
