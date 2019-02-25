@@ -48,7 +48,14 @@ require __DIR__ . '/../vendor/autoload.php';
         <!-- Contact form -->
         <section id="contact">
             <div class="container">
-                <h3>Contact Me with the help of Mailform</h3>
+                <?php
+                if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                    echo "<h3>SUBMIT - Contact Me with the help of Mailform</h3>";
+                    echo "<h4>Hello ".htmlspecialchars($_POST['mailform-name'])."!</h4>";
+                } else {
+                    echo "<h3>Contact Me with the help of Mailform</h3>";
+                }
+                ?>
                 <p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non.
                     Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
                 <form method="post" action="#">
@@ -68,8 +75,9 @@ require __DIR__ . '/../vendor/autoload.php';
                                                       rows="6"></textarea></div>
 
                         <p>Please click the middle button, in order to proof that you are not a robot:</p>
+                        <!-- Issue #4: checked and grouping of input to determine if middle is hit -->
                         <div class="col-4 col-12-medium">
-                            <input type="radio" id="mailform-priority-low" name="mailform-priority" checked>
+                            <input type="radio" id="mailform-priority-low" name="mailform-priority">
                             <label for="mailform-priority-low">Left</label>
                         </div>
                         <div class="col-4 col-12-medium">
@@ -83,10 +91,18 @@ require __DIR__ . '/../vendor/autoload.php';
 
                         <div class="col-12">
                             <ul class="actions">
-                                <li><input type="submit" class="primary" value="Send Message"/></li>
+                                <li><input type="submit" class="button primary" value="Send Message"/></li>
                                 <li><input type="reset" value="Reset Form"/></li>
                             </ul>
                         </div>
+                        <?php
+                        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                            echo "<code class='col-12'>You submitted: ";
+                            var_dump($_POST);
+                            echo "</code>";
+                        }
+                        ?>
+
                     </div>
                 </form>
             </div>
