@@ -11,6 +11,9 @@ Send out a given mail form
 ## PHP project init
 ### PHP
 
+Project requires at least PHP 7.2.
+
+#### Ubuntu
 Depending on your installation you may need to install a more recent PHP version,
 as I had to do on Ubuntu 18.0.4 LTS:
 https://tecadmin.net/install-php-7-on-ubuntu/
@@ -23,6 +26,12 @@ sudo apt-get install -y php7.2
 ```
 sudo apt install php7.2-xml php7.2-mbstring php7.2-mysql php7.2-intl php7.2-sqlite3 php-xdebug sqlite3
 ```
+#### Mac
+```
+$ brew install php@7.2
+```
+In case you have older versions of PHP installed follow this cleanup procedure:
+https://medium.com/@romaninsh/install-php-7-2-xdebug-on-macos-high-sierra-with-homebrew-july-2018-d7968fe7e8b8
 
 ### Composer
 ```
