@@ -27,14 +27,13 @@ require __DIR__ . '/../vendor/autoload.php';
     <nav id="nav">
         <ul>
             <li><a href="#contact" class="active">Contact form</a></li>
-            <li><a href="https://www.github.com/ottlinger/mailform" target="_blank">Mailform@Github</a></li>
-            <li><a href="https://aiki-it.de" target="_blank">AIKI IT</a></li>
         </ul>
     </nav>
     <footer>
         <ul class="icons">
             <li>Feedback via <a href="https://www.github.com/ottlinger/mailform" target="_blank" class="icon fa-github"><span
-                    class="label">Github</span></a></li>
+                            class="label">Github</span></a></li>
+            <li><a href="https://aiki-it.de" target="_blank">AIKI IT</a></li>
         </ul>
     </footer>
 </section>
