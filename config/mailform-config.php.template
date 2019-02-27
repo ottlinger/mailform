@@ -1,0 +1,20 @@
+<?php
+
+// allow debugging
+;ini_set('display_errors', 'on');
+;ini_set('display_startup_errors', 'on');
+;error_reporting(E_ALL);
+
+// This may cause problems with local test runs, in case you do not see any test results remove the following line
+;die(); // For further security
+;/*
+[mailform]
+;;//Please rename this file to mailconfig-config.php in your live setup and adapt all values properly
+;;// sender mail address
+sendermail = 'foo@bar.de';
+;;// where to send registration data to
+recipientmail = 'foo@buzz.de';
+;;// whether to send mails or not, set to true in production deployments
+sendmails = false;
+;*/
+;?>

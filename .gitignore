@@ -1,6 +1,6 @@
 *.cache
 composer.phar
-inc/config.ini.php
+config/mailform-config.php
 .idea
 *.iml
 coverage.xml
