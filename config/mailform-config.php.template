@@ -11,9 +11,9 @@
 [mailform]
 ;;//Please rename this file to mailconfig-config.php in your live setup and adapt all values properly
 ;;// sender mail address
-sendermail = 'foo@bar.de';
+sender = 'foo@bar.de';
 ;;// where to send registration data to
-recipientmail = 'foo@buzz.de';
+recipient = 'foo@buzz.de';
 ;;// whether to send mails or not, set to true in production deployments
 sendmails = false;
 ;*/
