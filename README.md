@@ -33,6 +33,11 @@ $ brew install php@7.2
 In case you have older versions of PHP installed follow this cleanup procedure:
 https://medium.com/@romaninsh/install-php-7-2-xdebug-on-macos-high-sierra-with-homebrew-july-2018-d7968fe7e8b8
 
+If you have multiple PHP versions and need to switch per project you may need this:
+```
+$ brew install brew-php-switcher
+```
+
 ### Composer
 ```
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
