@@ -60,6 +60,7 @@ require __DIR__ . '/../vendor/autoload.php';
                 <form method="post" action="#">
                     <div class="row gtr-uniform">
                         <div class="col-12">
+                            <label for="mailform-category">Please select the category of your request:</label>
                             <select name="mailform-category" id="mailform-category">
                                 <option value="1">Contact request</option>
                                 <option value="2">Book request</option>
@@ -70,7 +71,9 @@ require __DIR__ . '/../vendor/autoload.php';
                         </div>
                         <div class="col-6 col-12-xsmall"><input type="email" name="mailform-email" id="mailform-email"
                                                                 placeholder="Your email"/></div>
-                        <div class="col-12"><textarea name="mailform-message" id="mailform-message" placeholder="Your message"
+                        <div class="col-12">
+                            <label for="mailform-message">We are looking forward to your message:</label>
+                            <textarea name="mailform-message" id="mailform-message" placeholder="Your message"
                                                       rows="6"></textarea></div>
 
                         <p>Please click the middle button, in order to proof that you are not a robot:</p>
