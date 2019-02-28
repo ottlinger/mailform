@@ -50,13 +50,13 @@ require __DIR__ . '/../vendor/autoload.php';
                 <?php
                 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     echo "<h3>SUBMIT - Contact Me with the help of Mailform</h3>";
-                    echo "<h4>Hello ".htmlspecialchars($_POST['mailform-name'])."!</h4>";
+                    echo "<h4>Hello " . htmlspecialchars($_POST['mailform-name']) . "!</h4>";
                 } else {
                     echo "<h3>Contact Me with the help of Mailform</h3>";
                 }
                 ?>
-                <p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non.
-                    Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
+                <p>This mail form allows to send a message and select a request type. Apart from that there is a littels
+                    spam protection available.</p>
                 <form method="post" action="#">
                     <div class="row gtr-uniform">
                         <div class="col-12">
@@ -67,14 +67,15 @@ require __DIR__ . '/../vendor/autoload.php';
                                 <option value="3">Administration</option>
                             </select>
                         </div>
-                        <div class="col-6 col-12-xsmall"><input type="text" name="mailform-name" id="mailform-name" placeholder="Your name"/>
+                        <div class="col-6 col-12-xsmall"><input type="text" name="mailform-name" id="mailform-name"
+                                                                placeholder="Your name"/>
                         </div>
                         <div class="col-6 col-12-xsmall"><input type="email" name="mailform-email" id="mailform-email"
                                                                 placeholder="Your email"/></div>
                         <div class="col-12">
                             <label for="mailform-message">We are looking forward to your message:</label>
                             <textarea name="mailform-message" id="mailform-message" placeholder="Your message"
-                                                      rows="6"></textarea></div>
+                                      rows="6"></textarea></div>
 
                         <p>Please click the middle button, in order to proof that you are not a robot:</p>
                         <!-- Issue #4: checked and grouping of input to determine if middle is hit -->
@@ -119,7 +120,7 @@ require __DIR__ . '/../vendor/autoload.php';
                 <li>&copy; Mailform, <?php echo date("Y-m-d"); ?> All rights reserved.</li>
                 <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
                 <li>Served by <a href="https://www.github.com/ottlinger/mailform">Mailform</a> from <a
-                        href="https://aiki-it.de">AIKI IT</a></li>
+                            href="https://aiki-it.de">AIKI IT</a></li>
             </ul>
         </div>
     </section>
