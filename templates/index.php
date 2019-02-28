@@ -10,7 +10,7 @@ require __DIR__ . '/../vendor/autoload.php';
 ?>
 <html lang="en">
 <head>
-    <title>Mailform - English example application</title>
+    <title>Mailform - example application</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="stylesheet" href="assets/css/main.css"/>
@@ -52,7 +52,7 @@ require __DIR__ . '/../vendor/autoload.php';
                     echo "<h3>SUBMIT - Contact Me with the help of Mailform</h3>";
                     echo "<h4>Hello " . htmlspecialchars($_POST['mailform-name']) . "!</h4>";
                 } else {
-                    echo "<h3>Contact Me with the help of Mailform</h3>";
+                    echo "<h3>Mailform example application</h3>";
                 }
                 ?>
                 <p>This mail form allows to send a message and select a request type. Apart from that there is a littels
