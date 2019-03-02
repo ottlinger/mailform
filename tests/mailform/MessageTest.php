@@ -31,4 +31,10 @@ final class MessageTest extends TestCase
         $this->assertTrue($message->isValid());
     }
 
+    public function testObjectWithInvalidName() {
+        $message = new Message("", " ÄMyContents", "foo@bar.com ");
+        $this->assertFalse($message->isValid());
+    }
+
+
 }
