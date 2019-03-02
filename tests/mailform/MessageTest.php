@@ -36,5 +36,10 @@ final class MessageTest extends TestCase
         $this->assertFalse($message->isValid());
     }
 
+    public function testObjectWithInvalidContents() {
+        $message = new Message("YourName", "", "foo@bar.com ");
+        $this->assertFalse($message->isValid());
+    }
+
 
 }
