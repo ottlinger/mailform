@@ -1,8 +1,8 @@
 <?php
 declare(strict_types=1);
 
-use Mailform\Email;
-use Mailform\Message;
+use mailform\Email;
+use mailform\Message;
 use PHPUnit\Framework\TestCase;
 
 final class MessageTest extends TestCase
