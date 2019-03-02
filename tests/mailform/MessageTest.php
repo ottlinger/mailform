@@ -28,5 +28,7 @@ final class MessageTest extends TestCase
         $this->assertEquals("MyName", $message->getName());
         $this->assertEquals("ÄMyContents", $message->getContents());
         $this->assertEquals("foo@bar.com", $message->getEmail());
+        $this->assertTrue($message->isValid());
     }
+
 }
