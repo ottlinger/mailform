@@ -13,7 +13,7 @@ final class Message
     {
         $this->name = htmlspecialchars(trim($name));
         $this->contents = htmlspecialchars(trim($contents));
-        $this->email = Email::fromString($email);
+        $this->email = Email::fromString(htmlspecialchars(trim($email)));
     }
 
     public function getContents()
