@@ -12,6 +12,11 @@ final class Mailer
         $this->sendOut = $sendOut;
     }
 
+    public function isSendOut()
+    {
+        return $this->sendOut;
+    }
+
 }
 
 
