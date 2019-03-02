@@ -15,24 +15,4 @@ final class MailerTest extends TestCase
         $this->assertEquals("foo@bar.com", $message->getEmail());
         $this->assertTrue($message->isValid());
     }
-
-    public function testObjectWithInvalidName()
-    {
-        $message = new Message("", " ÄMyContents", "foo@bar.com ");
-        $this->assertFalse($message->isValid());
-    }
-
-    public function testObjectWithInvalidContents()
-    {
-        $message = new Message("YourName", "", "foo@bar.com ");
-        $this->assertFalse($message->isValid());
-    }
-
-    public function testObjectWithInvalidMailAddress()
-    {
-        $this->expectException(InvalidArgumentException::class);
-
-        new Message("YourName", "MyContents", "invalid");
-    }
-
 }
