@@ -7,21 +7,6 @@ use PHPUnit\Framework\TestCase;
 
 final class MessageTest extends TestCase
 {
-    public function testCannotBeCreatedFromInvalidEmailAddress(): void
-    {
-        $this->expectException(InvalidArgumentException::class);
-
-        Email::fromString('invalid');
-    }
-
-    public function testCanBeUsedAsString(): void
-    {
-        $this->assertEquals(
-            'user@example.com',
-            Email::fromString('user@example.com')
-        );
-    }
-
     public function testObjectCreationAndGetters()
     {
         $message = new Message("MyName   ", " ÄMyContents", "foo@bar.com ");
@@ -31,15 +16,23 @@ final class MessageTest extends TestCase
         $this->assertTrue($message->isValid());
     }
 
-    public function testObjectWithInvalidName() {
+    public function testObjectWithInvalidName()
+    {
         $message = new Message("", " ÄMyContents", "foo@bar.com ");
         $this->assertFalse($message->isValid());
     }
 
-    public function testObjectWithInvalidContents() {
+    public function testObjectWithInvalidContents()
+    {
         $message = new Message("YourName", "", "foo@bar.com ");
         $this->assertFalse($message->isValid());
     }
 
+    public function testObjectWithInvalidMailAddress()
+    {
+        $this->expectException(InvalidArgumentException::class);
+
+        new Message("YourName", "MyContents", "invalid");
+    }
 
 }
