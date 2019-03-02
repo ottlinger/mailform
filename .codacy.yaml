@@ -1,0 +1,6 @@
+# https://support.codacy.com/hc/en-us/articles/115000566729-How-do-I-ignore-files-that-are-not-in-master-branch-
+exclude_paths:
+  - templates/**/*
+  - config/**/*
+  - vendor/**/*
+  - tests/**.php
