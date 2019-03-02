@@ -59,14 +59,14 @@ require_once __DIR__ . '/../vendor/autoload.php';
                     spam protection available.</p>
                 <form method="post" action="#">
                     <div class="row gtr-uniform">
-                        <div class="col-12">
+                        <!--div class="col-12">
                             <label for="mailform-category">Please select the category of your request:</label>
                             <select name="mailform-category" id="mailform-category">
                                 <option value="1">Contact request</option>
                                 <option value="2">Book request</option>
                                 <option value="3">Administration</option>
                             </select>
-                        </div>
+                        </div-->
                         <div class="col-6 col-12-xsmall"><input type="text" name="mailform-name" id="mailform-name"
                                                                 placeholder="Your name"/>
                         </div>
