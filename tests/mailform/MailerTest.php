@@ -13,4 +13,11 @@ final class MailerTest extends TestCase
         $mailer = new Mailer($message, true);
         $this->assertTrue($mailer->isSendOut());
     }
+
+    public function testCreationWithImplicitNoSendOut()
+    {
+        $message = new Message("MyName   ", " ÄMyContents", "foo@bar.com ");
+        $mailer = new Mailer($message);
+        $this->assertFalse($mailer->isSendOut());
+    }
 }
