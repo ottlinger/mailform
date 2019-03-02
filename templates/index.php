@@ -5,7 +5,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <?php
-require __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 ?>
 <html lang="en">
@@ -49,10 +49,10 @@ require __DIR__ . '/../vendor/autoload.php';
             <div class="container">
                 <?php
                 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                    echo "<h3>SUBMIT - Contact Me with the help of Mailform</h3>";
-                    echo "<h4>Hello " . htmlspecialchars($_POST['mailform-name']) . "!</h4>";
+                    print "<h3>SUBMIT - Contact Me with the help of Mailform</h3>";
+                    print "<h4>Hello " . htmlspecialchars($_POST['mailform-name']) . "!</h4>";
                 } else {
-                    echo "<h3>Mailform example application</h3>";
+                    print "<h3>Mailform example application</h3>";
                 }
                 ?>
                 <p>This mail form allows to send a message and select a request type. Apart from that there is a littels
@@ -100,9 +100,9 @@ require __DIR__ . '/../vendor/autoload.php';
                         </div>
                         <?php
                         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                            echo "<code class='col-12'>You submitted: ";
+                            print "<code class='col-12'>You submitted: ";
                             var_dump($_POST);
-                            echo "</code>";
+                            print "</code>";
                         }
                         ?>
 
@@ -117,7 +117,7 @@ require __DIR__ . '/../vendor/autoload.php';
     <section id="footer">
         <div class="container">
             <ul class="copyright">
-                <li>&copy; Mailform, <?php echo date("Y-m-d"); ?> All rights reserved.</li>
+                <li>&copy; Mailform, <?php print date("Y-m-d"); ?> All rights reserved.</li>
                 <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
                 <li>Served by <a href="https://www.github.com/ottlinger/mailform">Mailform</a> from <a
                             href="https://aiki-it.de">AIKI IT</a></li>
