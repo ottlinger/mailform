@@ -7,6 +7,9 @@
 <?php
 require_once __DIR__ . '/../vendor/autoload.php';
 
+use mailform\Mailer;
+use mailform\Message;
+
 ?>
 <html lang="en">
 <head>
@@ -32,7 +35,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
     <footer>
         <ul class="icons">
             <li>Feedback via <a href="https://www.github.com/ottlinger/mailform" target="_blank" class="icon fa-github"><span
-                            class="label">Github</span></a></li>
+                        class="label">Github</span></a></li>
             <li><a href="https://aiki-it.de" target="_blank">AIKI IT</a></li>
         </ul>
     </footer>
@@ -48,9 +51,14 @@ require_once __DIR__ . '/../vendor/autoload.php';
         <section id="contact">
             <div class="container">
                 <?php
+                print "<h1>Config: " . boolval(Mailer::getFromConfiguration("sendmails")) . "</h1>";
+
                 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     print "<h3>SUBMIT - Contact Me with the help of Mailform</h3>";
                     print "<h4>Hello " . htmlspecialchars($_POST['mailform-name']) . "!</h4>";
+
+                    $mailer = new Mailer(new Message($_POST['mailform-name'], $_POST['mailform-message'], $_POST['mailform-email']), true);
+                    $mailer->send();
                 } else {
                     print "<h3>Mailform example application</h3>";
                 }
@@ -59,6 +67,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
                     spam protection available.</p>
                 <form method="post" action="#">
                     <div class="row gtr-uniform">
+                        <!-- TODO generify: all mailform-something ids are selected and put into the mail -->
                         <!--div class="col-12">
                             <label for="mailform-category">Please select the category of your request:</label>
                             <select name="mailform-category" id="mailform-category">
@@ -120,7 +129,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
                 <li>&copy; Mailform, <?php print date("Y-m-d"); ?> All rights reserved.</li>
                 <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
                 <li>Served by <a href="https://www.github.com/ottlinger/mailform">Mailform</a> from <a
-                            href="https://aiki-it.de">AIKI IT</a></li>
+                        href="https://aiki-it.de">AIKI IT</a></li>
             </ul>
         </div>
     </section>
