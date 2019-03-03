@@ -51,7 +51,11 @@ use mailform\Message;
         <section id="contact">
             <div class="container">
                 <?php
-                print "<h1>Config: " . boolval(Mailer::getFromConfiguration("sendmails")) . "</h1>";
+                if (boolval(Mailer::getFromConfiguration("sendmails"))) {
+                    print "<h1>Application is configured to really send out mails!</h1>";
+                } else {
+                    print "<h1>Application is running in demo-mode and will not send out mails.</h1>";
+                }
 
                 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     print "<h3>SUBMIT - Contact Me with the help of Mailform</h3>";
