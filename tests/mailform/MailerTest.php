@@ -26,6 +26,9 @@ final class MailerTest extends TestCase
         $message = new Message("MyName   ", " ÄMyContents", "foo@bar.com ");
         $mailer = new Mailer($message);
         $mailer->send();
+        // https://github.com/sebastianbergmann/phpunit-documentation/issues/171
+        // prevent warning about test without assertions
+        $this->addToAssertionCount(1);
     }
 
     public function testMailTextGeneration()
@@ -33,7 +36,7 @@ final class MailerTest extends TestCase
         $message = new Message("MyName   ", " ÄMyContents", "foo@bar.com ");
         $mailer = new Mailer($message);
         $mailtext = $mailer->getMailText();
-        $this->assertContainsEquals("MyName", $mailtext);
-        $this->assertContainsEquals("ÄMyContents", $mailtext);
+        $this->assertContains("MyName", $mailtext);
+        $this->assertContains("ÄMyContents", $mailtext);
     }
 }
