@@ -36,7 +36,7 @@ final class MailerTest extends TestCase
         $message = new Message("MyName   ", " ÄMyContents", "foo@bar.com ");
         $mailer = new Mailer($message);
         $mailtext = $mailer->getMailText();
-        $this->assertContains("MyName", $mailtext);
-        $this->assertContains("ÄMyContents", $mailtext);
+        $this->assertStringContainsString("MyName", $mailtext);
+        $this->assertStringContainsString("ÄMyContents", $mailtext);
     }
 }
