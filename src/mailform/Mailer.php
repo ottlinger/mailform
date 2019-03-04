@@ -71,11 +71,17 @@ final class Mailer
         $timestamp = date('Y-m-d H:i:s');
         $subjectLine = 'Mailform - Request received' . $timestamp;
 
+        if (FormHelper::isSetAndNotEmpty('SERVER_NAME')) {
+            $serverName = FormHelper::filterUserInput($_SERVER['SERVER_NAME']);
+        } else {
+            $serverName = "localhost";
+        }
+
         $header = 'MIME-Version: 1.0' . "\r\n";
         $header .= "Content-Type: text/html; charset=\"utf-8\"\r\n" . "Content-Transfer-Encoding: 8bit\r\n";
         $header .= 'From: Mailform <' . Mailer::getFromConfiguration("sender") . '>' . "\r\n";
         $header .= 'X-Mailer: Mailform-PHP/' . phpversion() . "\r\n";
-        $header .= "Message-ID: <" . time() . rand(1, 1000) . "_" . date('YmdHis') . "@" . $_SERVER['SERVER_NAME'] . ">" . "\r\n";
+        $header .= "Message-ID: <" . time() . rand(1, 1000) . "_" . date('YmdHis') . "@" . $serverName . ">" . "\r\n";
 
         if ($this->isSendOut() && boolval(Mailer::getFromConfiguration("sendmails"))) {
             mail((string)$this->message->getEmail(), $subjectLine, $this->getMailText(), $header);
