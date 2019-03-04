@@ -61,9 +61,6 @@ final class Mailer
         if ($this->isSendOut() && boolval(Mailer::getFromConfiguration("sendmails"))) {
             mail((string)$this->message->getEmail(), $subjectLine, $mailMessage, $header);
             mail(Mailer::getFromConfiguration("recipient"), $subjectLine, $mailMessage, $header);
-
-        } else {
-            echo "<p>Not sending any mails.</p>";
         }
     }
 
