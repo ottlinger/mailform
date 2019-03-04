@@ -20,4 +20,10 @@ final class MailerTest extends TestCase
         $mailer = new Mailer($message);
         $this->assertFalse($mailer->isSendOut());
     }
+
+    public function testMailTextCreationAndNotSending() {
+        $message = new Message("MyName   ", " ÄMyContents", "foo@bar.com ");
+        $mailer = new Mailer($message);
+        $mailer->send();
+    }
 }
