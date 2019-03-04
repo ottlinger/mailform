@@ -21,9 +21,19 @@ final class MailerTest extends TestCase
         $this->assertFalse($mailer->isSendOut());
     }
 
-    public function testMailTextCreationAndNotSending() {
+    public function testMailTextCreationAndNotSending()
+    {
         $message = new Message("MyName   ", " ÄMyContents", "foo@bar.com ");
         $mailer = new Mailer($message);
         $mailer->send();
+    }
+
+    public function testMailTextGeneration()
+    {
+        $message = new Message("MyName   ", " ÄMyContents", "foo@bar.com ");
+        $mailer = new Mailer($message);
+        $mailtext = $mailer->getMailText();
+        $this->assertContainsEquals("MyName", $mailtext);
+        $this->assertContainsEquals("ÄMyContents", $mailtext);
     }
 }
