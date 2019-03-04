@@ -25,8 +25,18 @@ final class Mailer
     {
         $timestamp = date('Y-m-d H:i:s');
         $subjectLine = 'Mailform - Request received' . $timestamp;
-        $userAgent = $_SERVER['HTTP_USER_AGENT'] ?: 'none';
-        $remoteAddress = $_SERVER['REMOTE_ADDR'] ?: 'none';
+
+        if (FormHelper::isSetAndNotEmpty('HTTP_USER_AGENT')) {
+            $userAgent = FormHelper::filterUserInput($_SERVER['HTTP_USER_AGENT']);
+        } else {
+            $userAgent = "none";
+        }
+
+        if (FormHelper::isSetAndNotEmpty('REMOTE_ADDR')) {
+            $remoteAddress = FormHelper::filterUserInput($_SERVER['REMOTE_ADDR']);
+        } else {
+            $remoteAddress = "none";
+        }
 
         return "<html><head><title>" . $subjectLine . "</title></head>
             <body><h1>" . $subjectLine . "</h1>
