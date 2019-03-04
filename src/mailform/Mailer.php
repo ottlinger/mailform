@@ -23,28 +23,29 @@ final class Mailer
 
     public function send()
     {
-        $subjectLine = 'Statusinfo - Mailform';
+        $timestamp = date('Y-m-d H:i:s');
+        $subjectLine = 'Mailform - Request received'. $timestamp;
         $mailMessage = "<html><head><title>" . $subjectLine . "</title></head>
             <body><h1>" . $subjectLine . "</h1>
               <table>
                <tr>
-               <td><b>Zeit:</b></td>
-               <td>" . date('Y-m-d H:i:s') . "</td>
+               <td><b>Time:</b></td>
+               <td>" . $timestamp . "</td>
                </tr>
                <tr>
                <td><b>Name:</b></td>
                <td>" . $this->message->getName() . "</td>
                </tr>
                <tr>
-               <td><b>Nachricht:</b></td>
+               <td><b>Message:</b></td>
                <td>" . $this->message->getContents() . "</td>
                </tr>
                <tr>
-               <td><b>Aufrufer-IP:</b></td>
+               <td><b>Caller-IP:</b></td>
                <td>" . $_SERVER['REMOTE_ADDR'] . "</td>
                </tr>
                <tr>
-               <td><b>Agent:</b></td>
+               <td><b>Caller-Agent:</b></td>
                <td>" . $_SERVER['HTTP_USER_AGENT'] . "</td>
                </tr>
               </table>
