@@ -58,7 +58,7 @@ use mailform\Message;
                 }
 
                 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                    print "<h3>SUBMIT - Contact Me with the help of Mailform</h3>";
+                    print "<h3>SUBMIT - Contact me with the help of Mailform - " . date('Y-m-d H:i:s') . "</h3>";
                     print "<h4>Hello " . htmlspecialchars($_POST['mailform-name']) . "!</h4>";
 
                     $mailer = new Mailer(new Message($_POST['mailform-name'], $_POST['mailform-message'], $_POST['mailform-email']), true);
