@@ -69,7 +69,14 @@ use mailform\Message;
                 ?>
                 <p>This mail form allows to send a message and select a request type. Apart from that there is a littels
                     spam protection available.</p>
+
+                <?php
+                if ($_SERVER['REQUEST_METHOD'] != 'POST') {
+                ?>
                 <form method="post" action="#">
+                    <?php
+                    } // end if not POST
+                    ?>
                     <div class="row gtr-uniform">
                         <!-- TODO generify: all mailform-something ids are selected and put into the mail -->
                         <!--div class="col-12">
@@ -105,13 +112,17 @@ use mailform\Message;
                             <label for="mailform-priority-high">Right</label>
                         </div>
 
-                        <div class="col-12">
-                            <ul class="actions">
-                                <li><input type="submit" class="button primary" value="Send Message"/></li>
-                                <li><input type="reset" value="Reset Form"/></li>
-                            </ul>
-                        </div>
                         <?php
+                        if ($_SERVER['REQUEST_METHOD'] != 'POST') {
+                            ?>
+                            <div class="col-12">
+                                <ul class="actions">
+                                    <li><input type="submit" class="button primary" value="Send Message"/></li>
+                                    <li><input type="reset" value="Reset Form"/></li>
+                                </ul>
+                            </div>
+                            <?php
+                        } // end if NOT-POST
                         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             print "<code class='col-12'>You submitted: ";
                             var_dump($_POST);
