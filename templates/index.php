@@ -61,8 +61,15 @@ use mailform\Message;
                     print "<h3>SUBMIT - Contact me with the help of Mailform - " . date('Y-m-d H:i:s') . "</h3>";
                     print "<h4>Hello " . htmlspecialchars($_POST['mailform-name']) . "!</h4>";
 
-                    $mailer = new Mailer(new Message($_POST['mailform-name'], $_POST['mailform-message'], $_POST['mailform-email']), true);
-                    $mailer->send();
+                    $message = new Message($_POST['mailform-name'], $_POST['mailform-message'], $_POST['mailform-email']);
+                    $mailer = new Mailer($message, true);
+
+                    if(!$message->isValid()) {
+                        print "<h4 style:\"color:red;\">Errors while submitting the form ...try again</h4>";
+                    } else {
+                        $mailer->send();
+                    }
+
                 } else {
                     print "<h3>Mailform example application</h3>";
                 }
