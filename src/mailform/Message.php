@@ -19,7 +19,7 @@ final class Message
 
     public function isValid()
     {
-        return !empty($this->getContents()) && !empty($this->getEmail()) && !empty($this->getName()) && $this->email->isValid();
+        return !empty($this->getContents()) && !empty($this->getName()) && !$this->hasMailErrors();
     }
 
     public function getContents()
@@ -27,14 +27,20 @@ final class Message
         return $this->contents;
     }
 
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
     public function getName()
     {
         return $this->name;
+    }
+
+    public function hasMailErrors(): bool
+    {
+        return empty($this->getEmail()) || !$this->getEmail()->isValid();
+
+    }
+
+    public function getEmail()
+    {
+        return $this->email;
     }
 
 }
