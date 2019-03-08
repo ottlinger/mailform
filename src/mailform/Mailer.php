@@ -84,7 +84,7 @@ final class Mailer
         $header .= "Message-ID: <" . time() . rand(1, 1000) . "_" . date('YmdHis') . "@" . $serverName . ">" . "\r\n";
 
         if ($this->isSendOut() && boolval(Mailer::getFromConfiguration("sendmails"))) {
-            // TODO: replace by library to properly handle mail errors 
+            // TODO: replace by library to properly handle mail errors
             // https://github.com/PHPMailer/PHPMailer/wiki/Tutorial
             mail((string)$this->message->getEmail(), $subjectLine, $this->getMailText(), $header);
             mail(Mailer::getFromConfiguration("recipient"), $subjectLine, $this->getMailText(), $header);
