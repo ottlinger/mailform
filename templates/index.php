@@ -62,7 +62,6 @@ $hasErrors = false;
 
                 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     print "<h3>SUBMIT - Contact me with the help of Mailform - " . date('Y-m-d H:i:s') . "</h3>";
-                    print "<h4>Hello " . htmlspecialchars($_POST['mailform-name']) . "!</h4>";
 
                     $message = new Message($_POST['mailform-name'], $_POST['mailform-message'], $_POST['mailform-email']);
                     $mailer = new Mailer($message, true);
@@ -111,7 +110,9 @@ $hasErrors = false;
                                 <?php
                                 if ($hasErrors || boolval(FormHelper::isSetAndNotEmptyInArray($_POST, "mailform-email"))) {
                                     print " value='" . FormHelper::filterUserInput($_POST['mailform-email']) . "' ";
-                                    print " style=\"border-color: red;\" ";
+                                    if ($message->hasMailErrors()) {
+                                        print " style=\"border-color: red;\" ";
+                                    }
                                 }
                                 ?>
 
@@ -119,7 +120,18 @@ $hasErrors = false;
                         <div class="col-12">
                             <label for="mailform-message">We are looking forward to your message:</label>
                             <textarea name="mailform-message" id="mailform-message" placeholder="Your message"
-                                      rows="6"></textarea></div>
+                                <?php
+                                if ($hasErrors || boolval(FormHelper::isSetAndNotEmptyInArray($_POST, "mailform-message"))) {
+                                    print " style=\"border-color: red;\" ";
+                                }
+                                ?>
+                                      rows="6">
+                                                                <?php
+                                                                if ($hasErrors || boolval(FormHelper::isSetAndNotEmptyInArray($_POST, "mailform-message"))) {
+                                                                    print FormHelper::filterUserInput($_POST['mailform-message']);
+                                                                }
+                                                                ?>
+                            </textarea></div>
 
                         <p>Please click the middle button, in order to proof that you are not a robot:</p>
                         <!-- Issue #4: checked and grouping of input to determine if middle is hit -->
@@ -137,7 +149,7 @@ $hasErrors = false;
                         </div>
 
                         <?php
-                        if ($_SERVER['REQUEST_METHOD'] != 'POST' || $hasErrors) {
+                        if ((!$hasErrors && $_SERVER['REQUEST_METHOD'] != 'POST') || $hasErrors) {
                             ?>
                             <div class="col-12">
                                 <ul class="actions">
