@@ -1,8 +1,7 @@
 language: php
 php:
-# not working anymore  - '7.0.32'
-# not working anymore  - '7.1.26'
-  - '7.2.15'
+# not working anymore  - '7.1.27'
+  - '7.2.16'
   - '7.3.3'
 # https://github.com/sebastianbergmann/phpunit/issues/2581
 #  - hhvm
