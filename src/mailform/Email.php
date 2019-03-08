@@ -3,8 +3,6 @@ declare(strict_types=1);
 
 namespace mailform;
 
-use phpDocumentor\Reflection\Types\Boolean;
-
 final class Email
 {
     private $email;
