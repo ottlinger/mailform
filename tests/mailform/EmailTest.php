@@ -14,11 +14,16 @@ final class EmailTest extends TestCase
         );
     }
 
-    public function testCannotBeCreatedFromInvalidEmailAddress(): void
+    public function testIllegalMailAddressIsMarkedAsInvalid(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $email = Email::fromString('invalid');
+        $this->assertFalse($email->isValid());
+    }
 
-        Email::fromString('invalid');
+    public function testValidMailAddressIsMarkedAsValid(): void
+    {
+        $email = Email::fromString(' user@example.com');
+        $this->assertTrue($email->isValid());
     }
 
     public function testCanBeUsedAsString(): void

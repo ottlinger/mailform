@@ -1,7 +1,9 @@
 <?php
 declare(strict_types=1);
+
 namespace mailform;
-use InvalidArgumentException;
+
+use phpDocumentor\Reflection\Types\Boolean;
 
 final class Email
 {
@@ -9,9 +11,7 @@ final class Email
 
     private function __construct(string $email)
     {
-        $this->ensureIsValidEmail($email);
-
-        $this->email = $email;
+        $this->email = FormHelper::filterUserInput($email);
     }
 
     public static function fromString(string $email): self
@@ -24,15 +24,11 @@ final class Email
         return $this->email;
     }
 
-    private function ensureIsValidEmail(string $email): void
+    public function isValid(): bool
     {
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            throw new InvalidArgumentException(
-                sprintf(
-                    '"%s" is not a valid email address',
-                    $email
-                )
-            );
+        if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
+            return false;
         }
+        return true;
     }
 }

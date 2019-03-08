@@ -33,7 +33,7 @@ final class Message
 
     public function isValid()
     {
-        return !empty($this->getContents()) && !empty($this->getEmail()) && !empty($this->getName());
+        return !empty($this->getContents()) && !empty($this->getEmail()) && !empty($this->getName()) && $this->email->isValid();
     }
 
 }

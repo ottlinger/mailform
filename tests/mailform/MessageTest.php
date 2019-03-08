@@ -1,7 +1,6 @@
 <?php
 declare(strict_types=1);
 
-use mailform\Email;
 use mailform\Message;
 use PHPUnit\Framework\TestCase;
 
@@ -30,8 +29,7 @@ final class MessageTest extends TestCase
 
     public function testObjectWithInvalidMailAddress()
     {
-        $this->expectException(InvalidArgumentException::class);
-
-        new Message("YourName", "MyContents", "invalid");
+        $message = new Message("YourName", "MyContents", "invalid");
+        $this->assertFalse($message->isValid());
     }
 }
