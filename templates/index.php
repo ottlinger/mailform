@@ -125,13 +125,11 @@ $hasErrors = false;
                                     print " style=\"border-color: red;\" ";
                                 }
                                 ?>
-                                      rows="6">
-                                                                <?php
-                                                                if ($hasErrors || boolval(FormHelper::isSetAndNotEmptyInArray($_POST, "mailform-message"))) {
-                                                                    print FormHelper::filterUserInput($_POST['mailform-message']);
-                                                                }
-                                                                ?>
-                            </textarea></div>
+                                      rows="6"><?php
+                                if ($hasErrors || boolval(FormHelper::isSetAndNotEmptyInArray($_POST, "mailform-message"))) {
+                                    print FormHelper::filterUserInput($_POST['mailform-message']);
+                                }
+                                ?></textarea></div>
 
                         <p>Please click the middle button, in order to proof that you are not a robot:</p>
                         <!-- Issue #4: checked and grouping of input to determine if middle is hit -->
