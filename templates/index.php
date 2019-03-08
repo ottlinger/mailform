@@ -10,6 +10,8 @@ require_once __DIR__ . '/../vendor/autoload.php';
 use mailform\Mailer;
 use mailform\Message;
 
+$hasErrors = false;
+
 ?>
 <html lang="en">
 <head>
@@ -64,8 +66,9 @@ use mailform\Message;
                     $message = new Message($_POST['mailform-name'], $_POST['mailform-message'], $_POST['mailform-email']);
                     $mailer = new Mailer($message, true);
 
-                    if(!$message->isValid()) {
+                    if (!$message->isValid()) {
                         print "<h4 style=\"color:red;\">Errors while submitting the form ...try again</h4>";
+                        $hasErrors = true;
                     } else {
                         $mailer->send();
                     }
