@@ -17,9 +17,9 @@ if ($isTemplate) {
     ini_set('display_startup_errors', 'on');
     error_reporting(E_ALL);
 
-    echo '<pre>';
+    print '<pre>';
     if ($isTemplate) {
-        echo '<strong>You should adapt your configuration and save it as mailform-config.php, currently the dummy template is used, which means NO mail is sent out!</strong>';
+        print '<strong>You should adapt your configuration and save it as mailform-config.php, currently the dummy template is used, which means NO mail is sent out!</strong>';
     }
-    echo '</pre>';
+    print '</pre>';
 }

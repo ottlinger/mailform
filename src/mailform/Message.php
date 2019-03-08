@@ -35,7 +35,6 @@ final class Message
     public function hasMailErrors(): bool
     {
         return empty($this->getEmail()) || !$this->getEmail()->isValid();
-
     }
 
     public function getEmail()
