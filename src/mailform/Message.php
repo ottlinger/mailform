@@ -12,9 +12,9 @@ final class Message
 
     public function __construct($name, $contents, $email)
     {
-        $this->name = htmlspecialchars(trim($name));
-        $this->contents = htmlspecialchars(trim($contents));
-        $this->email = Email::fromString(htmlspecialchars(trim($email)));
+        $this->name = FormHelper::filterUserInput($name);
+        $this->contents = FormHelper::filterUserInput($contents);
+        $this->email = Email::fromString(FormHelper::filterUserInput($email));
     }
 
     public function isValid()
