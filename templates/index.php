@@ -108,6 +108,13 @@ $hasErrors = false;
                                                                 placeholder="Your name"/>
                         </div>
                         <div class="col-6 col-12-xsmall"><input type="email" name="mailform-email" id="mailform-email"
+                                <?php
+                                if ($hasErrors || boolval(FormHelper::isSetAndNotEmptyInArray($_POST, "mailform-email"))) {
+                                    print " value='" . FormHelper::filterUserInput($_POST['mailform-email']) . "' ";
+                                    print " style=\"border-color: red;\" ";
+                                }
+                                ?>
+
                                                                 placeholder="Your email"/></div>
                         <div class="col-12">
                             <label for="mailform-message">We are looking forward to your message:</label>
