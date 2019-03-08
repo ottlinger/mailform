@@ -82,6 +82,13 @@ https://phpunit.de/getting-started/phpunit-8.html
 $ composer require --dev phpunit/phpunit ^8 (needs a modern PHP)
 ```
 
+#### PHPMailer integration
+
+In order to integrate PHPMailer you may want to run:
+```
+$ composer require phpmailer/phpmailer
+```
+
 #### Templates
 
 The mail form is based on
