@@ -79,7 +79,7 @@ $hasErrors = false;
                 }
                 ?>
                 <p>This mail form allows to send a message and select a request type. Apart from that there is a littels
-                    spam protection available. errors? <?php print $hasErrors; ?></p>
+                    spam protection available.</p>
 
                 <?php
                 if ($_SERVER['REQUEST_METHOD'] != 'POST' || $hasErrors) {
