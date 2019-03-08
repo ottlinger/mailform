@@ -24,7 +24,7 @@ final class Mailer
     public function getMailText()
     {
         $timestamp = date('Y-m-d H:i:s');
-        $subjectLine = 'Mailform - Request received' . $timestamp;
+        $subjectLine = 'Mailform - Request received ' . $timestamp;
 
         if (FormHelper::isSetAndNotEmpty('HTTP_USER_AGENT')) {
             $userAgent = FormHelper::filterUserInput($_SERVER['HTTP_USER_AGENT']);
