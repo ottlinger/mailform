@@ -25,11 +25,13 @@ final class MessageTest extends TestCase
     {
         $message = new Message("YourName", "", "foo@bar.com ");
         $this->assertFalse($message->isValid());
+        $this->assertFalse($message->hasMailErrors());
     }
 
     public function testObjectWithInvalidMailAddress()
     {
         $message = new Message("YourName", "MyContents", "invalid");
         $this->assertFalse($message->isValid());
+        $this->assertTrue($message->hasMailErrors());
     }
 }
