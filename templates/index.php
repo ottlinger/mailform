@@ -101,11 +101,11 @@ $hasErrors = false;
                         <div class="col-6 col-12-xsmall"><input type="text" name="mailform-name" id="mailform-name"
                                 <?php
                                 if ($hasErrors || boolval(FormHelper::isSetAndNotEmptyInArray($_POST, "mailform-name"))) {
-                                    print " value='" + FormHelper::filterUserInput($_POST['mailform-name']) + "' ";
-                                    // placeholder="Your name"
+                                    print " value='" . FormHelper::filterUserInput($_POST['mailform-name']) . "' ";
+                                    print " style=\"border-color: red;\" ";
                                 }
                                 ?>
-                                                                />
+                                                                placeholder="Your name"/>
                         </div>
                         <div class="col-6 col-12-xsmall"><input type="email" name="mailform-email" id="mailform-email"
                                                                 placeholder="Your email"/></div>
