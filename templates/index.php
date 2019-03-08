@@ -7,6 +7,7 @@
 <?php
 require_once __DIR__ . '/../vendor/autoload.php';
 
+use mailform\FormHelper;
 use mailform\Mailer;
 use mailform\Message;
 
@@ -78,10 +79,10 @@ $hasErrors = false;
                 }
                 ?>
                 <p>This mail form allows to send a message and select a request type. Apart from that there is a littels
-                    spam protection available.</p>
+                    spam protection available. errors? <?php print $hasErrors; ?></p>
 
                 <?php
-                if ($_SERVER['REQUEST_METHOD'] != 'POST') {
+                if ($_SERVER['REQUEST_METHOD'] != 'POST' || $hasErrors) {
                 ?>
                 <form method="post" action="#">
                     <?php
@@ -98,7 +99,13 @@ $hasErrors = false;
                             </select>
                         </div-->
                         <div class="col-6 col-12-xsmall"><input type="text" name="mailform-name" id="mailform-name"
-                                                                placeholder="Your name"/>
+                                <?php
+                                if ($hasErrors || boolval(FormHelper::isSetAndNotEmptyInArray($_POST, "mailform-name"))) {
+                                    print " value='" + FormHelper::filterUserInput($_POST['mailform-name']) + "' ";
+                                    // placeholder="Your name"
+                                }
+                                ?>
+                                                                />
                         </div>
                         <div class="col-6 col-12-xsmall"><input type="email" name="mailform-email" id="mailform-email"
                                                                 placeholder="Your email"/></div>
@@ -123,7 +130,7 @@ $hasErrors = false;
                         </div>
 
                         <?php
-                        if ($_SERVER['REQUEST_METHOD'] != 'POST') {
+                        if ($_SERVER['REQUEST_METHOD'] != 'POST' || $hasErrors) {
                             ?>
                             <div class="col-12">
                                 <ul class="actions">
