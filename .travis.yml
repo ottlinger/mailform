@@ -2,7 +2,7 @@ language: php
 php:
 # not working anymore  - '7.1.27'
   - '7.2.16'
-  - '7.3.3'
+  - '7.3.2'
 # https://github.com/sebastianbergmann/phpunit/issues/2581
 #  - hhvm
 # 201902213
