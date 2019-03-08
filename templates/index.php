@@ -65,7 +65,7 @@ use mailform\Message;
                     $mailer = new Mailer($message, true);
 
                     if(!$message->isValid()) {
-                        print "<h4 style:\"color:red;\">Errors while submitting the form ...try again</h4>";
+                        print "<h4 style=\"color:red;\">Errors while submitting the form ...try again</h4>";
                     } else {
                         $mailer->send();
                     }
