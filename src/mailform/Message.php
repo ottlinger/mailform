@@ -27,6 +27,11 @@ final class Message
         return $this->contents;
     }
 
+    public function hasNameErrors(): bool
+    {
+        return empty($this->getName());
+    }
+
     public function getName()
     {
         return $this->name;
@@ -40,11 +45,6 @@ final class Message
     public function getEmail()
     {
         return $this->email;
-    }
-
-    public function hasNameErrors(): bool
-    {
-        return empty($this->getName());
     }
 
 }
