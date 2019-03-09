@@ -101,7 +101,9 @@ $hasErrors = false;
                                 <?php
                                 if ($hasErrors || boolval(FormHelper::isSetAndNotEmptyInArray($_POST, "mailform-name"))) {
                                     print " value='" . FormHelper::filterUserInput($_POST['mailform-name']) . "' ";
-                                    print " style=\"border-color: red;\" ";
+                                    if ($message->hasNameErrors()) {
+                                        print " style=\"border-color: red;\" ";
+                                    }
                                 }
                                 ?>
                                                                 placeholder="Your name"/>
