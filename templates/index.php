@@ -123,7 +123,7 @@ $hasErrors = false;
                             <label for="mailform-message">We are looking forward to your message:</label>
                             <textarea name="mailform-message" id="mailform-message" placeholder="Your message"
                                 <?php
-                                if ($hasErrors || boolval(FormHelper::isSetAndNotEmptyInArray($_POST, "mailform-message"))) {
+                                if (isset($message) && $message->hasContentsErrors()) {
                                     print " style=\"border-color: red;\" ";
                                 }
                                 ?>
