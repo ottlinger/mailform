@@ -47,4 +47,9 @@ final class Message
         return $this->email;
     }
 
+    public function hasContentsErrors(): bool
+    {
+        return empty($this->getContents());
+    }
+
 }
