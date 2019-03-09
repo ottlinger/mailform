@@ -19,7 +19,12 @@ final class Message
 
     public function isValid()
     {
-        return !empty($this->getContents()) && !$this->hasNameErrors() && !$this->hasMailErrors();
+        return !$this->hasContentsErrors() && !$this->hasNameErrors() && !$this->hasMailErrors();
+    }
+
+    public function hasContentsErrors(): bool
+    {
+        return empty($this->getContents());
     }
 
     public function getContents()
@@ -45,11 +50,6 @@ final class Message
     public function getEmail()
     {
         return $this->email;
-    }
-
-    public function hasContentsErrors(): bool
-    {
-        return empty($this->getContents());
     }
 
 }
