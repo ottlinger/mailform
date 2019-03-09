@@ -17,7 +17,7 @@ class FormHelper
         return self::isSetAndNotEmptyInArray($_SERVER, $key);
     }
 
-    public static function isSetAndNotEmptyInArray($array, $key)
+    public static function isSetAndNotEmptyInArray($array, $key): bool
     {
         // array_key_exists($key, $array) is similar but not null-safe
         if (isset($array) && isset($key)) {
@@ -35,7 +35,7 @@ class FormHelper
      *
      * @return string
      */
-    public static function filterUserInput($data)
+    public static function filterUserInput($data): string
     {
         if (isset($data)) {
             $data = trim('' . $data);
