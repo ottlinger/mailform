@@ -160,7 +160,7 @@ $hasErrors = false;
                         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             print "<code class='col-12'>You submitted: ";
                             var_dump($_POST);
-                            print "hasErrors? ".$hasErrors."</code>";
+                            print "hasErrors? " . $hasErrors . "</code>";
                         }
                         ?>
 
