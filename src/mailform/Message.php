@@ -19,7 +19,7 @@ final class Message
 
     public function isValid()
     {
-        return !empty($this->getContents()) && !empty($this->getName()) && !$this->hasMailErrors();
+        return !empty($this->getContents()) && !$this->hasNameErrors() && !$this->hasMailErrors();
     }
 
     public function getContents()
