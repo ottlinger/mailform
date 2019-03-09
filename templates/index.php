@@ -77,7 +77,7 @@ $hasErrors = false;
                     print "<h3>Mailform example application</h3>";
                 }
                 ?>
-                <p>This mail form allows to send a message and select a request type. Apart from that there is a littels
+                <p>This mail form allows to send a message and select a request type. Apart from that there is a little
                     spam protection available.</p>
 
                 <?php
