@@ -14,14 +14,45 @@ final class Mailer
         $this->sendOut = $sendOut;
     }
 
-    public static function getFromConfiguration($key)
+    public function send(): void
+    {
+        $timestamp = date('Y-m-d H:i:s');
+        $subjectLine = 'Mailform - Request received' . $timestamp;
+
+        if (FormHelper::isSetAndNotEmpty('SERVER_NAME')) {
+            $serverName = FormHelper::filterUserInput($_SERVER['SERVER_NAME']);
+        } else {
+            $serverName = "localhost";
+        }
+
+        $header = 'MIME-Version: 1.0' . "\r\n";
+        $header .= "Content-Type: text/html; charset=\"utf-8\"\r\n" . "Content-Transfer-Encoding: 8bit\r\n";
+        $header .= 'From: Mailform <' . Mailer::getFromConfiguration("sender") . '>' . "\r\n";
+        $header .= 'X-Mailer: Mailform-PHP/' . phpversion() . "\r\n";
+        $header .= "Message-ID: <" . time() . rand(1, 1000) . "_" . date('YmdHis') . "@" . $serverName . ">" . "\r\n";
+
+        if ($this->isSendOut() && boolval(Mailer::getFromConfiguration("sendmails"))) {
+            // TODO: replace by library to properly handle mail errors
+            // https://github.com/PHPMailer/PHPMailer/wiki/Tutorial
+            mail((string)$this->message->getEmail(), $subjectLine, $this->getMailText(), $header);
+            mail(Mailer::getFromConfiguration("recipient"), $subjectLine, $this->getMailText(), $header);
+        }
+    }
+
+    public static function getFromConfiguration($key): string
     {
         if ($GLOBALS['mailform'] && isset($GLOBALS['mailform'][$key])) {
             return trim('' . $GLOBALS['mailform'][$key]);
         }
+        return '';
     }
 
-    public function getMailText()
+    public function isSendOut(): bool
+    {
+        return $this->sendOut;
+    }
+
+    public function getMailText(): string
     {
         $timestamp = date('Y-m-d H:i:s');
         $subjectLine = 'Mailform - Request received ' . $timestamp;
@@ -38,7 +69,7 @@ final class Mailer
             $remoteAddress = "none";
         }
 
-        return "<html><head><title>" . $subjectLine . "</title></head>
+        return "<html lang='en'><head><title>" . $subjectLine . "</title></head>
             <body><h1>" . $subjectLine . "</h1>
               <table>
                <tr>
@@ -64,36 +95,6 @@ final class Mailer
               </table>
             </body>
             </html>";
-    }
-
-    public function send()
-    {
-        $timestamp = date('Y-m-d H:i:s');
-        $subjectLine = 'Mailform - Request received' . $timestamp;
-
-        if (FormHelper::isSetAndNotEmpty('SERVER_NAME')) {
-            $serverName = FormHelper::filterUserInput($_SERVER['SERVER_NAME']);
-        } else {
-            $serverName = "localhost";
-        }
-
-        $header = 'MIME-Version: 1.0' . "\r\n";
-        $header .= "Content-Type: text/html; charset=\"utf-8\"\r\n" . "Content-Transfer-Encoding: 8bit\r\n";
-        $header .= 'From: Mailform <' . Mailer::getFromConfiguration("sender") . '>' . "\r\n";
-        $header .= 'X-Mailer: Mailform-PHP/' . phpversion() . "\r\n";
-        $header .= "Message-ID: <" . time() . rand(1, 1000) . "_" . date('YmdHis') . "@" . $serverName . ">" . "\r\n";
-
-        if ($this->isSendOut() && boolval(Mailer::getFromConfiguration("sendmails"))) {
-            // TODO: replace by library to properly handle mail errors
-            // https://github.com/PHPMailer/PHPMailer/wiki/Tutorial
-            mail((string)$this->message->getEmail(), $subjectLine, $this->getMailText(), $header);
-            mail(Mailer::getFromConfiguration("recipient"), $subjectLine, $this->getMailText(), $header);
-        }
-    }
-
-    public function isSendOut()
-    {
-        return $this->sendOut;
     }
 
 }
