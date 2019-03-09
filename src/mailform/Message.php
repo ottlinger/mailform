@@ -42,4 +42,9 @@ final class Message
         return $this->email;
     }
 
+    public function hasNameErrors(): bool
+    {
+        return empty($this->getName());
+    }
+
 }
