@@ -17,7 +17,7 @@ final class Message
         $this->email = Email::fromString(FormHelper::filterUserInput($email));
     }
 
-    public function isValid()
+    public function isValid(): bool
     {
         return !$this->hasContentsErrors() && !$this->hasNameErrors() && !$this->hasMailErrors();
     }
@@ -27,7 +27,7 @@ final class Message
         return empty($this->getContents());
     }
 
-    public function getContents()
+    public function getContents(): string
     {
         return $this->contents;
     }
@@ -37,7 +37,7 @@ final class Message
         return empty($this->getName());
     }
 
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
@@ -47,7 +47,7 @@ final class Message
         return empty($this->getEmail()) || !$this->getEmail()->isValid();
     }
 
-    public function getEmail()
+    public function getEmail(): Email
     {
         return $this->email;
     }
