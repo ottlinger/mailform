@@ -38,5 +38,22 @@ final class MailerTest extends TestCase
         $mailtext = $mailer->getMailText();
         $this->assertStringContainsString("MyName", $mailtext);
         $this->assertStringContainsString("ÄMyContents", $mailtext);
+        // fallback due to missing global variables
+        $this->assertStringContainsString("none", $mailtext);
     }
+
+    public function testMailTextGenerationWithVariablesSet()
+    {
+        $_SERVER['HTTP_USER_AGENT'] = " MySpecialAgent    ";
+        $_SERVER['REMOTE_ADDR'] = " 127.0.0.1    ";
+
+        $message = new Message("MyName   ", " ÄMyContents", "foo@bar.com ");
+        $mailer = new Mailer($message);
+        $mailtext = $mailer->getMailText();
+        $this->assertStringContainsString("MyName", $mailtext);
+        $this->assertStringContainsString("ÄMyContents", $mailtext);
+        $this->assertStringContainsString("127.0.0.1", $mailtext);
+        $this->assertStringContainsString("MySpecialAgent", $mailtext);
+    }
+
 }
