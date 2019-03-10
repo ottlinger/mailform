@@ -19,10 +19,9 @@ final class Mailer
         $timestamp = date('Y-m-d H:i:s');
         $subjectLine = 'Mailform - Request received' . $timestamp;
 
+        $serverName = "localhost";
         if (FormHelper::isSetAndNotEmpty('SERVER_NAME')) {
             $serverName = FormHelper::filterUserInput($_SERVER['SERVER_NAME']);
-        } else {
-            $serverName = "localhost";
         }
 
         $header = 'MIME-Version: 1.0' . "\r\n";
@@ -57,16 +56,14 @@ final class Mailer
         $timestamp = date('Y-m-d H:i:s');
         $subjectLine = 'Mailform - Request received ' . $timestamp;
 
+        $userAgent = "none";
         if (FormHelper::isSetAndNotEmpty('HTTP_USER_AGENT')) {
             $userAgent = FormHelper::filterUserInput($_SERVER['HTTP_USER_AGENT']);
-        } else {
-            $userAgent = "none";
         }
 
+        $remoteAddress = "none";
         if (FormHelper::isSetAndNotEmpty('REMOTE_ADDR')) {
             $remoteAddress = FormHelper::filterUserInput($_SERVER['REMOTE_ADDR']);
-        } else {
-            $remoteAddress = "none";
         }
 
         return "<html lang='en'><head><title>" . $subjectLine . "</title></head>
