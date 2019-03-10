@@ -95,3 +95,9 @@ The mail form is based on
 https://html5up.net/read-only/download
 which is available under [Creative Commons Attribution 3.0 Unported
 ](./templates/LICENSE.txt)
+
+#### Application configuration
+
+This application can be configured if used in you own context.
+Please copy the given template [mailform-config.php.template](./config/mailform-config.php.template)
+to [mailform-config.php](./config) in the config-directory.
