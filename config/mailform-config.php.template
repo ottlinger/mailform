@@ -16,5 +16,7 @@ sender = 'foo@bar.de';
 recipient = 'foo@buzz.de';
 ;;// whether to send mails or not, set to true in production deployments
 sendmails = false;
+;;// target link after mail is sent out
+successlinktarget = './index.php'
 ;*/
 ;?>
