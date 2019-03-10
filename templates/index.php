@@ -21,6 +21,18 @@ $sendOut = false;
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="stylesheet" href="assets/css/main.css"/>
+
+    <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="assets/favicon/house-152-237998.png">
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="assets/favicon/house-144-237998.png">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="assets/favicon/house-152-237998.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/favicon/house-144-237998.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="assets/favicon/house-120-237998.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/favicon/house-114-237998.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/favicon/house-72-237998.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/favicon/house-57-237998.png">
+    <link rel="icon" href="assets/favicon/house-32-237998.png" sizes="32x32">
 </head>
 <body class="is-preload">
 
