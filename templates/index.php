@@ -132,7 +132,8 @@ $sendOut = false;
                                 }
                                 ?></textarea></div>
 
-                        <p>Please click the <strong>middle</strong> button, in order to proof that you are not a robot:</p>
+                        <p>Please click the <strong>middle</strong> button, in order to proof that you are not a robot:
+                        </p>
                         <!-- Issue #4: checked and grouping of input to determine if middle is hit -->
                         <div class="col-4 col-12-medium">
                             <input type="radio" id="mailform-priority-low" name="mailform-priority-low">
@@ -169,7 +170,6 @@ $sendOut = false;
                             print "<div class=\"col-12\"><p>You may return to our >>> <a href=\"" . Mailer::getFromConfiguration("successlinktarget") . "\">main application page</a></p></div>";
                         }
                         ?>
-
                     </div>
                 </form>
             </div>
@@ -188,7 +188,6 @@ $sendOut = false;
             </ul>
         </div>
     </section>
-
 </div>
 
 <!-- Scripts -->
