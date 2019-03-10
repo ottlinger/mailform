@@ -56,4 +56,15 @@ final class MailerTest extends TestCase
         $this->assertStringContainsString("MySpecialAgent", $mailtext);
     }
 
+    public function testMailSendingWithGlobalVariablesSet()
+    {
+        $_SERVER['SERVER_NAME'] = "myhost-cibuild";
+
+        $message = new Message("MyName   ", " ÄMyContents", "foo@bar.com ");
+        $mailer = new Mailer($message);
+        $mailer->send();
+        // https://github.com/sebastianbergmann/phpunit-documentation/issues/171
+        // prevent warning about test without assertions
+        $this->addToAssertionCount(1);
+    }
 }
