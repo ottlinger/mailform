@@ -98,7 +98,7 @@ which is available under [Creative Commons Attribution 3.0 Unported
 
 #### Favicon
 
-The used favicon [House]( https://www.freefavicon.com/freefavicons/objects/iconinfo/house-152-237998.html)is from [FreeFavicon]( http://www.freefavicon.com/blog/).
+The used favicon [House](https://www.freefavicon.com/freefavicons/objects/iconinfo/house-152-237998.html) is taken from [FreeFavicon](http://www.freefavicon.com/blog/).
 
 #### Application configuration
 
