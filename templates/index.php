@@ -68,7 +68,7 @@ $sendOut = false;
                     $mailer = new Mailer($message, true);
 
                     if (!$message->isValid()) {
-                        print "<h4 style=\"color:red;\">Errors while submitting the form ...try again</h4>";
+                        print "<h4 style=\"color:red;\">There were errors while submitting the form, please provide all mandatory fields and a valid email.</h4>";
                         $hasErrors = true;
                     } else {
                         $mailer->send();
@@ -161,15 +161,15 @@ $sendOut = false;
                             </div>
                             <?php
                         } // end if NOT-POST
-                        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                            print "<code class='col-12'>You submitted: ";
+                        if ($_SERVER['REQUEST_METHOD'] == 'POST' && boolval(Mailer::getFromConfiguration("debug"))) {
+                            print "<code class='col-12'>Data that was submitted: ";
                             var_dump($_POST);
-                            print "hasErrors? " . $hasErrors . "</code>";
+                            print "</code>";
                         }
 
                         if ($sendOut) {
                             print "<h4>Thanks for submitting your request</h4>";
-                            print "<p>You may return to our >>> <a href=\"" . Mailer::getFromConfiguration("successlinktarget") . "\">main application page</a></p>";
+                            print "<div class=\"col-12\"><p>You may return to our >>> <a href=\"" . Mailer::getFromConfiguration("successlinktarget") . "\">main application page</a></p></div>";
                         }
                         ?>
 
