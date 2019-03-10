@@ -54,16 +54,18 @@ $sendOut = false;
         <!-- Contact form -->
         <section id="contact">
             <div class="container">
+                <h3>Mailform example application</h3>
+                <p>This mail form allows to send a message to a configured recipient address and the submitted mail
+                    address. Apart from that there is a little
+                    spam protection available.</p>
                 <?php
                 if (boolval(Mailer::getFromConfiguration("sendmails"))) {
-                    print "<h1>Application is configured to really send out mails!</h1>";
+                    print "<h1 style=\"color:green;\">Application is configured to really send out mails!</h1>";
                 } else {
-                    print "<h1>Application is running in demo-mode and will not send out mails.</h1>";
+                    print "<h1 style=\"color:lawngreen;\">Application is running in demo-mode and will not send out mails.</h1>";
                 }
 
                 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                    print "<h3>SUBMIT - Contact me with the help of Mailform - " . date('Y-m-d H:i:s') . "</h3>";
-
                     $message = new Message($_POST['mailform-name'], $_POST['mailform-message'], $_POST['mailform-email']);
                     $mailer = new Mailer($message, true);
 
@@ -74,13 +76,8 @@ $sendOut = false;
                         $mailer->send();
                         $sendOut = true;
                     }
-
-                } else {
-                    print "<h3>Mailform example application</h3>";
                 }
                 ?>
-                <p>This mail form allows to send a message and select a request type. Apart from that there is a little
-                    spam protection available.</p>
 
                 <?php
                 if ($_SERVER['REQUEST_METHOD'] != 'POST' || $hasErrors) {
@@ -168,7 +165,7 @@ $sendOut = false;
                         }
 
                         if ($sendOut) {
-                            print "<h4>Thanks for submitting your request</h4>";
+                            print "<h4>Thanks for submitting your request at " . date('Y-m-d H:i:s') . "</h4>";
                             print "<div class=\"col-12\"><p>You may return to our >>> <a href=\"" . Mailer::getFromConfiguration("successlinktarget") . "\">main application page</a></p></div>";
                         }
                         ?>
