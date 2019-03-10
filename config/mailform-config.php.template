@@ -18,5 +18,7 @@ recipient = 'foo@buzz.de';
 sendmails = false;
 ;;// target link after mail is sent out
 successlinktarget = './index.php'
+;;// debug output
+debug = false;
 ;*/
 ;?>

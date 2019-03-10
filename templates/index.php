@@ -12,6 +12,7 @@ use mailform\Mailer;
 use mailform\Message;
 
 $hasErrors = false;
+$sendOut = false;
 
 ?>
 <html lang="en">
@@ -71,6 +72,7 @@ $hasErrors = false;
                         $hasErrors = true;
                     } else {
                         $mailer->send();
+                        $sendOut = true;
                     }
 
                 } else {
@@ -163,6 +165,11 @@ $hasErrors = false;
                             print "<code class='col-12'>You submitted: ";
                             var_dump($_POST);
                             print "hasErrors? " . $hasErrors . "</code>";
+                        }
+
+                        if ($sendOut) {
+                            print "<h4>Thanks for submitting your request</h4>";
+                            print "<p>You may return to our >>> <a href=\"" . Mailer::getFromConfiguration("successlinktarget") . "\">main application page</a></p>";
                         }
                         ?>
 
