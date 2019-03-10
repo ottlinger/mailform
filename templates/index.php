@@ -132,18 +132,18 @@ $sendOut = false;
                                 }
                                 ?></textarea></div>
 
-                        <p>Please click the middle button, in order to proof that you are not a robot:</p>
+                        <p>Please click the <strong>middle</strong> button, in order to proof that you are not a robot:</p>
                         <!-- Issue #4: checked and grouping of input to determine if middle is hit -->
                         <div class="col-4 col-12-medium">
-                            <input type="radio" id="mailform-priority-low" name="mailform-priority">
+                            <input type="radio" id="mailform-priority-low" name="mailform-priority-low">
                             <label for="mailform-priority-low">Left</label>
                         </div>
                         <div class="col-4 col-12-medium">
-                            <input type="radio" id="mailform-priority-normal" name="mailform-priority">
+                            <input type="radio" id="mailform-priority-normal" name="mailform-priority-normal">
                             <label for="mailform-priority-normal">Middle</label>
                         </div>
                         <div class="col-4 col-12-medium">
-                            <input type="radio" id="mailform-priority-high" name="mailform-priority">
+                            <input type="radio" id="mailform-priority-high" name="mailform-priority-high">
                             <label for="mailform-priority-high">Right</label>
                         </div>
 
