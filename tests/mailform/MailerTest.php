@@ -67,4 +67,9 @@ final class MailerTest extends TestCase
         // prevent warning about test without assertions
         $this->addToAssertionCount(1);
     }
+
+    public function testRandomConfigurationKeyReturnsEmptyString()
+    {
+        $this->assertEquals('', Mailer::getFromConfiguration("doesNotExistHopefullyInTests"));
+    }
 }
