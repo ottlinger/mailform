@@ -108,3 +108,8 @@ The used favicon [House](https://www.freefavicon.com/freefavicons/objects/iconin
 This application can be configured if used in you own context.
 Please copy the given template [mailform-config.php.template](./config/mailform-config.php.template)
 to [mailform-config.php](./config) in the config-directory.
+
+#### Docker integration
+
+* https://linuxconfig.org/how-to-create-a-docker-based-lamp-stack-using-docker-compose-on-ubuntu-18-04-bionic-beaver-linux
+* https://hub.docker.com/_/php
