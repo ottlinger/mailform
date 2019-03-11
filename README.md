@@ -118,6 +118,7 @@ $ docker-compose up
 
 If you see something like:
 ```
+....
 mailform_mariadb_1 is up-to-date
 Recreating mailform_php-apache_1 ... done
 Attaching to mailform_mariadb_1, mailform_php-apache_1
