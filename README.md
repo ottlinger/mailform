@@ -111,5 +111,19 @@ to [mailform-config.php](./config) in the config-directory.
 
 #### Docker integration
 
+With a more recent Docker setup you may simply run:
+```
+$ docker-compose up
+```
+
+If you see something like:
+```
+mailform_mariadb_1 is up-to-date
+Recreating mailform_php-apache_1 ... done
+Attaching to mailform_mariadb_1, mailform_php-apache_1
+```
+you are ready to visit http://localhost
+to see the application up and running.
+
 * https://linuxconfig.org/how-to-create-a-docker-based-lamp-stack-using-docker-compose-on-ubuntu-18-04-bionic-beaver-linux
 * https://hub.docker.com/_/php
