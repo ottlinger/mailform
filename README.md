@@ -125,5 +125,9 @@ Attaching to mailform_mariadb_1, mailform_php-apache_1
 you are ready to visit http://localhost
 to see the application up and running.
 
+In case you need to tweak PHP settings:
+http://localhost/phpinfo.php
+might be of use - please remove this file in production deployments!
+
 * https://linuxconfig.org/how-to-create-a-docker-based-lamp-stack-using-docker-compose-on-ubuntu-18-04-bionic-beaver-linux
 * https://hub.docker.com/_/php
