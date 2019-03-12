@@ -1,6 +1,6 @@
 {
     "name": "ottlinger/mailform",
-    "description": "Send out a given mail form",
+    "description": "Web application that sends out mails via a contact form.",
     "type": "application",
     "license": "Apache License 2.0",
     "authors": [
