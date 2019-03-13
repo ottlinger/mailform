@@ -118,10 +118,10 @@ $ docker-compose up
 
 If you see something like:
 ```
-....
-mailform_mariadb_1 is up-to-date
+Starting mailform_mariadb_1 ... done
 Recreating mailform_php-apache_1 ... done
 Attaching to mailform_mariadb_1, mailform_php-apache_1
+....
 ```
 you are ready to visit http://localhost:8888
 to see the application up and running.
