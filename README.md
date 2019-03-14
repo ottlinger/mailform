@@ -118,9 +118,8 @@ $ docker-compose up
 
 If you see something like:
 ```
-Starting mailform_mariadb_1 ... done
 Recreating mailform_php-apache_1 ... done
-Attaching to mailform_mariadb_1, mailform_php-apache_1
+Attaching to mailform_php-apache_1
 ....
 ```
 you are ready to visit http://localhost:8888
