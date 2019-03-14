@@ -17,7 +17,7 @@ final class Mailer
     public function send(): void
     {
         $timestamp = date('Y-m-d H:i:s');
-        $subjectLine = 'Mailform - Request received' . $timestamp;
+        $subjectLine = 'Mailform - Request received ' . $timestamp;
 
         $serverName = "localhost";
         if (FormHelper::isSetAndNotEmpty('SERVER_NAME')) {
