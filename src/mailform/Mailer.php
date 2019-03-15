@@ -94,4 +94,10 @@ final class Mailer
             </html>";
     }
 
+    public function getRequestMailText(): string
+    {
+        // $template = file_get_contents('http://www.example.com/');
+        return "empty";
+    }
+
 }
