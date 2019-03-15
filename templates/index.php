@@ -89,6 +89,11 @@ $sendOut = false;
                         $sendOut = true;
                     }
                 }
+
+                if ($sendOut) {
+                    print "<h4>Thanks for submitting your request at " . date('Y-m-d H:i:s') . "</h4>";
+                    print "<div class=\"col-12\"><p>You may return to our >>> <a href=\"" . Mailer::getFromConfiguration('successlinktarget') . "\">main application page</a></p></div>";
+                }
                 ?>
 
                 <?php
@@ -175,11 +180,6 @@ $sendOut = false;
                             print "<code class='col-12'>Data that was submitted: ";
                             var_dump($_POST);
                             print "</code>";
-                        }
-
-                        if ($sendOut) {
-                            print "<h4>Thanks for submitting your request at " . date('Y-m-d H:i:s') . "</h4>";
-                            print "<div class=\"col-12\"><p>You may return to our >>> <a href=\"" . Mailer::getFromConfiguration('successlinktarget') . "\">main application page</a></p></div>";
                         }
                         ?>
                     </div>
