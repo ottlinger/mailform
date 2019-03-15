@@ -55,6 +55,8 @@ final class MailerTest extends TestCase
         $this->assertStringContainsString("127.0.0.1", $mailtext);
         $this->assertStringContainsString("MySpecialAgent", $mailtext);
         $this->assertNotEmpty($mailtext);
+
+        $this->assertEquals("empty", $mailer->getRequestMailText());
     }
 
     public function testMailSendingWithGlobalVariablesSet()
