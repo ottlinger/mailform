@@ -55,8 +55,6 @@ final class MailerTest extends TestCase
         $this->assertStringContainsString("127.0.0.1", $mailtext);
         $this->assertStringContainsString("MySpecialAgent", $mailtext);
         $this->assertNotEmpty($mailtext);
-
-        $this->assertEquals("empty", $mailer->getRequestMailText());
     }
 
     public function testMailSendingWithGlobalVariablesSet()
@@ -74,5 +72,21 @@ final class MailerTest extends TestCase
     public function testRandomConfigurationKeyReturnsEmptyString()
     {
         $this->assertEquals('', Mailer::getFromConfiguration("doesNotExistHopefullyInTests"));
+    }
+
+    public function testMailTextGenerationFromTemplatesWithVariablesSet()
+    {
+        $_SERVER['HTTP_USER_AGENT'] = " MySpecialAgent    ";
+        $_SERVER['REMOTE_ADDR'] = " 127.0.0.1    ";
+
+        $message = new Message("MyName   ", " MyContents", "foo@bar.com ");
+        $mailer = new Mailer($message);
+        $mailtext = $mailer->getRequestMailText();
+
+        $this->assertStringContainsString("MyName", $mailtext);
+        $this->assertStringContainsString("MyContents", $mailtext);
+        $this->assertStringContainsString("127.0.0.1", $mailtext);
+        $this->assertStringContainsString("MySpecialAgent", $mailtext);
+        $this->assertNotEmpty($mailtext);
     }
 }
