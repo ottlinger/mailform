@@ -96,8 +96,11 @@ final class Mailer
 
     public function getRequestMailText(): string
     {
-        // $template = file_get_contents('http://www.example.com/');
-        return "empty";
+        $template = file_get_contents(__DIR__.'/'.Mailer::getFromConfiguration('requesttemplate'));
+
+        //str_replace()
+
+        return $template;
     }
 
 }
