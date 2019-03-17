@@ -150,47 +150,55 @@ $sendOut = false;
                                 }
                                 ?></textarea></div>
 
-                        <p
-                            <?php
-                            if ($isRobot) {
-                                print " style=\"color: red;\" ";
-                            };
-                            ?>
-                        >Please click the <strong>middle</strong> button, in order to proof that you are not a robot:
-                        </p>
-
-                        <div class="col-4 col-12-medium">
-                            <input type="radio" id="mailform-priority-low" name="mailform-priority" value="low"
-                                <?php
-                                if (boolval(FormHelper::isSetAndNotEmptyInArray($_POST, "mailform-priority")) && "low" === FormHelper::filterUserInput($_POST['mailform-priority'])) {
-                                    print ' checked';
-                                }
-                                ?>
-                            >
-                            <label for="mailform-priority-low">Left</label>
-                        </div>
-                        <div class="col-4 col-12-medium">
-                            <input type="radio" id="mailform-priority-normal" name="mailform-priority" value="middle"
-                                <?php
-                                if (boolval(FormHelper::isSetAndNotEmptyInArray($_POST, "mailform-priority")) && "middle" === FormHelper::filterUserInput($_POST['mailform-priority'])) {
-                                    print ' checked';
-                                }
-                                ?>
-                            >
-                            <label for="mailform-priority-normal">Middle</label>
-                        </div>
-                        <div class="col-4 col-12-medium">
-                            <input type="radio" id="mailform-priority-high" name="mailform-priority" value="high"
-                                <?php
-                                if (boolval(FormHelper::isSetAndNotEmptyInArray($_POST, "mailform-priority")) && "high" === FormHelper::filterUserInput($_POST['mailform-priority'])) {
-                                    print ' checked';
-                                }
-                                ?>
-                            >
-                            <label for="mailform-priority-high">Right</label>
-                        </div>
-
                         <?php
+                        if (!$sendOut) {
+                            ?>
+
+                            <p
+                                <?php
+                                if ($isRobot) {
+                                    print " style=\"color: red;\" ";
+                                };
+                                ?>
+                            >Please click the <strong>middle</strong> button, in order to proof that you are not a
+                                robot:
+                            </p>
+
+                            <div class="col-4 col-12-medium">
+                                <input type="radio" id="mailform-priority-low" name="mailform-priority" value="low"
+                                    <?php
+                                    if (boolval(FormHelper::isSetAndNotEmptyInArray($_POST, "mailform-priority")) && "low" === FormHelper::filterUserInput($_POST['mailform-priority'])) {
+                                        print ' checked';
+                                    }
+                                    ?>
+                                >
+                                <label for="mailform-priority-low">Left</label>
+                            </div>
+                            <div class="col-4 col-12-medium">
+                                <input type="radio" id="mailform-priority-normal" name="mailform-priority"
+                                       value="middle"
+                                    <?php
+                                    if (boolval(FormHelper::isSetAndNotEmptyInArray($_POST, "mailform-priority")) && "middle" === FormHelper::filterUserInput($_POST['mailform-priority'])) {
+                                        print ' checked';
+                                    }
+                                    ?>
+                                >
+                                <label for="mailform-priority-normal">Middle</label>
+                            </div>
+                            <div class="col-4 col-12-medium">
+                                <input type="radio" id="mailform-priority-high" name="mailform-priority" value="high"
+                                    <?php
+                                    if (boolval(FormHelper::isSetAndNotEmptyInArray($_POST, "mailform-priority")) && "high" === FormHelper::filterUserInput($_POST['mailform-priority'])) {
+                                        print ' checked';
+                                    }
+                                    ?>
+                                >
+                                <label for="mailform-priority-high">Right</label>
+                            </div>
+
+                            <?php
+                        } // end if DO NOT SHOW if sendOut
+
                         if ((!$hasErrors && $_SERVER['REQUEST_METHOD'] != 'POST') || $hasErrors) {
                             ?>
                             <div class="col-12">
