@@ -71,6 +71,9 @@ $sendOut = false;
                     address. Apart from that there is a little
                     spam protection available.</p>
                 <?php
+                if (boolval(FormHelper::isSetAndNotEmptyInArray($_POST, "mailform-priority"))) {
+                    echo "<h1>" . FormHelper::filterUserInput($_POST['mailform-priority']) . "</h1>";
+                }
                 if (boolval(Mailer::getFromConfiguration("sendmails"))) {
                     print "<h1 style=\"color:green;\">Application is configured to really send out mails!</h1>";
                 } else {
@@ -197,7 +200,6 @@ $sendOut = false;
                         if ($_SERVER['REQUEST_METHOD'] == 'POST' && boolval(Mailer::getFromConfiguration("debug"))) {
                             print "<code class='col-12'>Data that was submitted: ";
                             var_dump($_POST);
-                            print "<h1>" . boolval('high' === FormHelper::isSetAndNotEmptyInArray($_POST, "mailform-priority")) . "</h1>";
                             print "</code>";
                         }
                         ?>
