@@ -12,6 +12,7 @@ use mailform\Mailer;
 use mailform\Message;
 
 $hasErrors = false;
+$isRobot = !(boolval(FormHelper::isSetAndNotEmptyInArray($_POST, "mailform-priority")) && "middle" === FormHelper::filterUserInput($_POST['mailform-priority']));
 $sendOut = false;
 
 ?>
@@ -71,9 +72,6 @@ $sendOut = false;
                     address. Apart from that there is a little
                     spam protection available.</p>
                 <?php
-                if (boolval(FormHelper::isSetAndNotEmptyInArray($_POST, "mailform-priority"))) {
-                    echo "<h1>" . FormHelper::filterUserInput($_POST['mailform-priority']) . "</h1>";
-                }
                 if (boolval(Mailer::getFromConfiguration("sendmails"))) {
                     print "<h1 style=\"color:green;\">Application is configured to really send out mails!</h1>";
                 } else {
@@ -84,7 +82,7 @@ $sendOut = false;
                     $message = new Message($_POST['mailform-name'], $_POST['mailform-message'], $_POST['mailform-email']);
                     $mailer = new Mailer($message, true);
 
-                    if (!$message->isValid()) {
+                    if (!$message->isValid() || $isRobot) {
                         print "<h4 style=\"color:red;\">There were errors while submitting the form, please provide all mandatory fields and a valid email.</h4>";
                         $hasErrors = true;
                     } else {
@@ -152,7 +150,13 @@ $sendOut = false;
                                 }
                                 ?></textarea></div>
 
-                        <p>Please click the <strong>middle</strong> button, in order to proof that you are not a robot:
+                        <p
+                            <?php
+                            if ($isRobot) {
+                                print " style=\"color: red;\" ";
+                            };
+                            ?>
+                        >Please click the <strong>middle</strong> button, in order to proof that you are not a robot:
                         </p>
 
                         <div class="col-4 col-12-medium">
