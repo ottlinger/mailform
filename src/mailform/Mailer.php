@@ -97,10 +97,27 @@ final class Mailer
     public function getRequestMailText(): string
     {
         $template = file_get_contents(__DIR__ . '/' . Mailer::getFromConfiguration('requesttemplate'));
+        $timestamp = date('Y-m-d H:i:s');
+        $subjectLine = 'Mailform - Request received ' . $timestamp;
 
-        //str_replace()
+        $userAgent = "none";
+        if (FormHelper::isSetAndNotEmpty('HTTP_USER_AGENT')) {
+            $userAgent = FormHelper::filterUserInput($_SERVER['HTTP_USER_AGENT']);
+        }
 
-        return $template;
+        $remoteAddress = "none";
+        if (FormHelper::isSetAndNotEmpty('REMOTE_ADDR')) {
+            $remoteAddress = FormHelper::filterUserInput($_SERVER['REMOTE_ADDR']);
+        }
+
+        $templateReplaced = str_replace("##SUBJECT", $subjectLine, $template);
+        $templateReplaced = str_replace("##TIMESTAMP", $timestamp, $templateReplaced);
+        $templateReplaced = str_replace("##NAME", $this->message->getName(), $templateReplaced);
+        $templateReplaced = str_replace("##MESSAGE", $this->message->getContents(), $templateReplaced);
+        $templateReplaced = str_replace("##IPADDR", $remoteAddress, $templateReplaced);
+        $templateReplaced = str_replace("##AGENT", $userAgent, $templateReplaced);
+
+        return $templateReplaced;
     }
 
 }
