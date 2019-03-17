@@ -178,7 +178,7 @@ $sendOut = false;
                         <div class="col-4 col-12-medium">
                             <input type="radio" id="mailform-priority-high" name="mailform-priority" value="high"
                                 <?php
-                                if ('high' === FormHelper::filterUserInput($_POST['mailform-priority'])) {
+                                if (boolval(FormHelper::isSetAndNotEmptyInArray($_POST, "mailform-priority")) && "high" === FormHelper::filterUserInput($_POST['mailform-priority'])) {
                                     print ' checked';
                                 }
                                 ?>
