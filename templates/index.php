@@ -151,7 +151,7 @@ $sendOut = false;
 
                         <p>Please click the <strong>middle</strong> button, in order to proof that you are not a robot:
                         </p>
-                        <!-- Issue #4: checked and grouping of input to determine if middle is hit -->
+
                         <div class="col-4 col-12-medium">
                             <input type="radio" id="mailform-priority-low" name="mailform-priority" value="low">
                             <label for="mailform-priority-low">Left</label>
