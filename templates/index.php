@@ -163,7 +163,13 @@ $sendOut = false;
                             <label for="mailform-priority-low">Left</label>
                         </div>
                         <div class="col-4 col-12-medium">
-                            <input type="radio" id="mailform-priority-normal" name="mailform-priority" value="middle">
+                            <input type="radio" id="mailform-priority-normal" name="mailform-priority" value="middle"
+                                <?php
+                                if ("middle" === FormHelper::isSetAndNotEmptyInArray($_POST, "mailform-priority")) {
+                                    print ' checked';
+                                }
+                                ?>
+                            >
                             <label for="mailform-priority-normal">Middle</label>
                         </div>
                         <div class="col-4 col-12-medium">
