@@ -155,7 +155,7 @@ $sendOut = false;
                         <div class="col-4 col-12-medium">
                             <input type="radio" id="mailform-priority-low" name="mailform-priority" value="low"
                                 <?php
-                                if ("low" === FormHelper::isSetAndNotEmptyInArray($_POST, "mailform-priority")) {
+                                if ("low" === FormHelper::filterUserInput($_POST['mailform-priority'])) {
                                     print ' checked';
                                 }
                                 ?>
@@ -175,7 +175,7 @@ $sendOut = false;
                         <div class="col-4 col-12-medium">
                             <input type="radio" id="mailform-priority-high" name="mailform-priority" value="high"
                                 <?php
-                                if ("high" === FormHelper::isSetAndNotEmptyInArray($_POST, "mailform-priority")) {
+                                if ('high' === FormHelper::isSetAndNotEmptyInArray($_POST, "mailform-priority")) {
                                     print ' checked';
                                 }
                                 ?>
@@ -197,6 +197,7 @@ $sendOut = false;
                         if ($_SERVER['REQUEST_METHOD'] == 'POST' && boolval(Mailer::getFromConfiguration("debug"))) {
                             print "<code class='col-12'>Data that was submitted: ";
                             var_dump($_POST);
+                            print "<h1>" . boolval('high' === FormHelper::isSetAndNotEmptyInArray($_POST, "mailform-priority")) . "</h1>";
                             print "</code>";
                         }
                         ?>
