@@ -82,11 +82,21 @@ final class MailerTest extends TestCase
         $message = new Message("MyName   ", " MyContents", "foo@bar.com ");
         $mailer = new Mailer($message);
         $mailtext = $mailer->getRequestMailText();
+        $this->assertNotEmpty($mailtext);
 
         $this->assertStringContainsString("MyName", $mailtext);
+        $this->assertStringNotContainsString("##NAME", $mailtext);
         $this->assertStringContainsString("MyContents", $mailtext);
+        $this->assertStringNotContainsString("##NAME", $mailtext);
         $this->assertStringContainsString("127.0.0.1", $mailtext);
         $this->assertStringContainsString("MySpecialAgent", $mailtext);
-        $this->assertNotEmpty($mailtext);
+
+        // ensure all placeholders are replaced
+        $this->assertStringNotContainsString("##SUBJECT", $mailtext);
+        $this->assertStringNotContainsString("##TIMESTAMP", $mailtext);
+        $this->assertStringNotContainsString("##NAME", $mailtext);
+        $this->assertStringNotContainsString("##MESSAGE", $mailtext);
+        $this->assertStringNotContainsString("##IPADDR", $mailtext);
+        $this->assertStringNotContainsString("##AGENT", $mailtext);
     }
 }
