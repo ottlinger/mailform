@@ -33,7 +33,7 @@ final class Mailer
         if ($this->isSendOut() && boolval(Mailer::getFromConfiguration("sendmails"))) {
             // TODO: replace by library to properly handle mail errors
             // https://github.com/PHPMailer/PHPMailer/wiki/Tutorial
-            mail((string)$this->message->getEmail(), $subjectLine, $this->getMailText(), $header);
+            mail((string)$this->message->getEmail(), $subjectLine, $this->getRequestMailText(), $header);
             mail(Mailer::getFromConfiguration("recipient"), $subjectLine, $this->getMailText(), $header);
         }
     }
@@ -49,6 +49,32 @@ final class Mailer
     public function isSendOut(): bool
     {
         return $this->sendOut;
+    }
+
+    public function getRequestMailText(): string
+    {
+        $template = file_get_contents(__DIR__ . '/' . Mailer::getFromConfiguration('requesttemplate'));
+        $timestamp = date('Y-m-d H:i:s');
+        $subjectLine = 'Mailform - We received your request at ' . $timestamp . " - thank you";
+
+        $userAgent = "none";
+        if (FormHelper::isSetAndNotEmpty('HTTP_USER_AGENT')) {
+            $userAgent = FormHelper::filterUserInput($_SERVER['HTTP_USER_AGENT']);
+        }
+
+        $remoteAddress = "none";
+        if (FormHelper::isSetAndNotEmpty('REMOTE_ADDR')) {
+            $remoteAddress = FormHelper::filterUserInput($_SERVER['REMOTE_ADDR']);
+        }
+
+        $templateReplaced = str_replace("##SUBJECT", $subjectLine, $template);
+        $templateReplaced = str_replace("##TIMESTAMP", $timestamp, $templateReplaced);
+        $templateReplaced = str_replace("##NAME", $this->message->getName(), $templateReplaced);
+        $templateReplaced = str_replace("##MESSAGE", $this->message->getContents(), $templateReplaced);
+        $templateReplaced = str_replace("##IPADDR", $remoteAddress, $templateReplaced);
+        $templateReplaced = str_replace("##AGENT", $userAgent, $templateReplaced);
+
+        return $templateReplaced;
     }
 
     public function getMailText(): string
@@ -92,32 +118,6 @@ final class Mailer
               </table>
             </body>
             </html>";
-    }
-
-    public function getRequestMailText(): string
-    {
-        $template = file_get_contents(__DIR__ . '/' . Mailer::getFromConfiguration('requesttemplate'));
-        $timestamp = date('Y-m-d H:i:s');
-        $subjectLine = 'Mailform - Request received ' . $timestamp;
-
-        $userAgent = "none";
-        if (FormHelper::isSetAndNotEmpty('HTTP_USER_AGENT')) {
-            $userAgent = FormHelper::filterUserInput($_SERVER['HTTP_USER_AGENT']);
-        }
-
-        $remoteAddress = "none";
-        if (FormHelper::isSetAndNotEmpty('REMOTE_ADDR')) {
-            $remoteAddress = FormHelper::filterUserInput($_SERVER['REMOTE_ADDR']);
-        }
-
-        $templateReplaced = str_replace("##SUBJECT", $subjectLine, $template);
-        $templateReplaced = str_replace("##TIMESTAMP", $timestamp, $templateReplaced);
-        $templateReplaced = str_replace("##NAME", $this->message->getName(), $templateReplaced);
-        $templateReplaced = str_replace("##MESSAGE", $this->message->getContents(), $templateReplaced);
-        $templateReplaced = str_replace("##IPADDR", $remoteAddress, $templateReplaced);
-        $templateReplaced = str_replace("##AGENT", $userAgent, $templateReplaced);
-
-        return $templateReplaced;
     }
 
 }
