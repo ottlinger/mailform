@@ -78,7 +78,7 @@ $sendOut = false;
                     print "<h1 style=\"color:lawngreen;\">Application is running in demo-mode and will not send out mails.</h1>";
                 }
 
-                if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $message = new Message($_POST['mailform-name'], $_POST['mailform-message'], $_POST['mailform-email']);
                     $mailer = new Mailer($message, true);
 
@@ -156,7 +156,7 @@ $sendOut = false;
 
                             <p
                                 <?php
-                                if ($isRobot) {
+                                if ($isRobot && $_SERVER['REQUEST_METHOD'] === 'POST') {
                                     print " style=\"color: red;\" ";
                                 };
                                 ?>
@@ -209,7 +209,7 @@ $sendOut = false;
                             </div>
                             <?php
                         } // end if NOT-POST
-                        if ($_SERVER['REQUEST_METHOD'] == 'POST' && boolval(Mailer::getFromConfiguration("debug"))) {
+                        if ($_SERVER['REQUEST_METHOD'] === 'POST' && boolval(Mailer::getFromConfiguration("debug"))) {
                             print "<code class='col-12'>Data that was submitted: ";
                             var_dump($_POST);
                             print "</code>";
