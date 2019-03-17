@@ -24,7 +24,7 @@ $sendOut = false;
 
     <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
     <link rel="apple-touch-icon-precomposed" href="assets/favicon/house-152-237998.png">
-    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileColor" content="#ffffff"/>
     <meta name="msapplication-TileImage" content="assets/favicon/house-144-237998.png">
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="assets/favicon/house-152-237998.png">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/favicon/house-144-237998.png">
@@ -153,7 +153,13 @@ $sendOut = false;
                         </p>
 
                         <div class="col-4 col-12-medium">
-                            <input type="radio" id="mailform-priority-low" name="mailform-priority" value="low">
+                            <input type="radio" id="mailform-priority-low" name="mailform-priority" value="low"
+                                <?php
+                                if ("low" === FormHelper::isSetAndNotEmptyInArray($_POST, "mailform-priority")) {
+                                    print ' checked';
+                                }
+                                ?>
+                            >
                             <label for="mailform-priority-low">Left</label>
                         </div>
                         <div class="col-4 col-12-medium">
