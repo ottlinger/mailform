@@ -96,7 +96,7 @@ final class Mailer
 
     public function getRequestMailText(): string
     {
-        $template = file_get_contents(__DIR__.'/'.Mailer::getFromConfiguration('requesttemplate'));
+        $template = file_get_contents(__DIR__ . '/' . Mailer::getFromConfiguration('requesttemplate'));
 
         //str_replace()
 
