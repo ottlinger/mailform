@@ -6,7 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- Docker support for local development
+- PHPUnit integration
+- Composer project setup
 ### Changed
+- Enhanced configurability of application with application config template found under [config](./config)
 ### Removed
 
 ## [0.0.1] - 2019-xx-yy
