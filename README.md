@@ -12,6 +12,7 @@ Allows sending mails to a configured and given mail address.
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/07b670b13aa944a789f40bbdf297b337)](https://www.codacy.com/app/github_25/mailform?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ottlinger/mailform&amp;utm_campaign=Badge_Grade)
 
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/ottlinger/mailform.svg?columns=all)](https://waffle.io/ottlinger/mailform)
+as Waffle is about to disappear in 2 months: [Github Project Mailform](https://github.com/users/ottlinger/projects/1?add_cards_query=is%3Aopen)
 
 [![Apache v2.0](https://img.shields.io/github/license/ottlinger/mailform.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
