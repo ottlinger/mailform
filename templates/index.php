@@ -86,7 +86,7 @@ $sendOut = false;
                         print "<h4 style=\"color:red;\">There were errors while submitting the form, please provide all mandatory fields and a valid email.</h4>";
                         $hasErrors = true;
                     } else {
-                        $mailer->send();
+                        $mailer->sendAllMails();
                         $sendOut = true;
                     }
                 }
