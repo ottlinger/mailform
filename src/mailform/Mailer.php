@@ -54,17 +54,8 @@ final class Mailer
         $timestamp = date('Y-m-d H:i:s');
         $subjectLine = 'Mailform - Request received ' . $timestamp . ' - internal recipient';
 
-        $serverName = "localhost";
-        if (FormHelper::isSetAndNotEmpty('SERVER_NAME')) {
-            $serverName = FormHelper::filterUserInput($_SERVER['SERVER_NAME']);
-        }
-
-        $header = 'MIME-Version: 1.0' . "\r\n";
-        $header .= "Content-Type: text/html; charset=\"utf-8\"\r\n" . "Content-Transfer-Encoding: 8bit\r\n";
-        $header .= 'From: Mailform <' . Mailer::getFromConfiguration("sender") . '>' . "\r\n";
+        $header = $this->createCommonHeaders();
         $header .= 'Reply-to: ' . $this->message->getName() . ' <' . $this->message->getEmail() . '>' . "\r\n";
-        $header .= 'X-Mailer: Mailform-PHP/' . phpversion() . "\r\n";
-        $header .= "Message-ID: <" . time() . rand(1, 1000) . "_" . date('YmdHis') . "@" . $serverName . ">" . "\r\n";
 
         if ($this->isSendOut() && boolval(Mailer::getFromConfiguration("sendmails"))) {
             // TODO: replace by library to properly handle mail errors
