@@ -25,6 +25,17 @@ final class Mailer
         $timestamp = date('Y-m-d H:i:s');
         $subjectLine = 'Mailform - Request received ' . $timestamp;
 
+        $header = $this->createCommonHeaders();
+
+        if ($this->isSendOut() && boolval(Mailer::getFromConfiguration("sendmails"))) {
+            // TODO: replace by library to properly handle mail errors
+            // https://github.com/PHPMailer/PHPMailer/wiki/Tutorial
+            mail((string)$this->message->getEmail(), $subjectLine, $this->getRequestMailText(), $header);
+        }
+    }
+
+    private function createCommonHeaders(): string
+    {
         $serverName = "localhost";
         if (FormHelper::isSetAndNotEmpty('SERVER_NAME')) {
             $serverName = FormHelper::filterUserInput($_SERVER['SERVER_NAME']);
@@ -35,12 +46,7 @@ final class Mailer
         $header .= 'From: Mailform <' . Mailer::getFromConfiguration("sender") . '>' . "\r\n";
         $header .= 'X-Mailer: Mailform-PHP/' . phpversion() . "\r\n";
         $header .= "Message-ID: <" . time() . rand(1, 1000) . "_" . date('YmdHis') . "@" . $serverName . ">" . "\r\n";
-
-        if ($this->isSendOut() && boolval(Mailer::getFromConfiguration("sendmails"))) {
-            // TODO: replace by library to properly handle mail errors
-            // https://github.com/PHPMailer/PHPMailer/wiki/Tutorial
-            mail((string)$this->message->getEmail(), $subjectLine, $this->getRequestMailText(), $header);
-        }
+        return $header;
     }
 
     public function sendInternal(): void
