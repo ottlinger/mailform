@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Docker support for local development
 - PHPUnit integration
 - Composer project setup
+- Make mail body configurable
 ### Changed
 - Enhanced configurability of application with application config template found under [config](./config)
 ### Removed
