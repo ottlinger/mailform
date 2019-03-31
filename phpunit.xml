@@ -15,7 +15,6 @@
     <testsuites>
         <testsuite name="Mailform Test Suite">
             <directory>./tests/</directory>
-            <directory>./inc/</directory>
         </testsuite>
     </testsuites>
     <logging>
