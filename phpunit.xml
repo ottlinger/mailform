@@ -13,7 +13,7 @@
         stopOnFailure="false"
 >
     <testsuites>
-        <testsuite name="Hornherzogen Test Suite">
+        <testsuite name="Mailform Test Suite">
             <directory>./tests/</directory>
             <directory>./inc/</directory>
         </testsuite>
