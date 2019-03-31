@@ -134,4 +134,4 @@ might be of use - please remove this file in production deployments!
 * https://hub.docker.com/_/php
 * https://docs.docker.com/install/linux/docker-ce/ubuntu/
 
-HINT! Even if you enable mail sending this will not work from within the container - you need to deploy the application first :-)
+*HINT!* Even if you enable mail sending this will not work from within the container - you need to deploy the application first :-)
