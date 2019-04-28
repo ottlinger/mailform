@@ -51,6 +51,10 @@ $sendOut = false;
     </nav>
     <footer>
         <ul class="icons">
+		<?php
+                    print "<li><a target=\"_blank\" href=\"" . Mailer::getFromConfiguration('pathimprint') . "\">imprint</a></li>";
+                    print "<li><a target=\"_blank\" href=\"" . Mailer::getFromConfiguration('pathgdpr') . "\">data protection information (GDPR)</a></li><br /><br />";
+		?>
             <li>Feedback via <a href="https://www.github.com/ottlinger/mailform" target="_blank" class="icon fa-github"><span
                         class="label">Github</span></a></li>
             <li><a href="https://aiki-it.de" target="_blank">AIKI IT</a></li>

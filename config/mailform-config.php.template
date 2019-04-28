@@ -24,5 +24,7 @@ debug = false;
 requesttemplate = '../../resources/request_template.html'
 ;;// path to imprint 
 pathimprint = './imprint.php'
+;;// path to GDPR  
+pathgdpr = './dsgvo.php'
 ;*/
 ;
