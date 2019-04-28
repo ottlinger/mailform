@@ -56,8 +56,8 @@ $sendOut = false;
                     print "<li><a target=\"_blank\" href=\"" . Mailer::getFromConfiguration('pathgdpr') . "\">data protection information (GDPR)</a></li><br /><br />";
 		?>
             <li>Feedback via <a href="https://www.github.com/ottlinger/mailform" target="_blank" class="icon fa-github"><span
-                        class="label">Github</span></a></li>
-            <li><a href="https://aiki-it.de" target="_blank">AIKI IT</a></li>
+                        class="label">Github</span> Github</a></li><br />
+            <li><a href="https://aiki-it.de" target="_blank">Powered by AIKI IT</a></li>
         </ul>
     </footer>
 </section>
