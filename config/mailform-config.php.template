@@ -22,5 +22,7 @@ successlinktarget = './index.php'
 debug = false;
 ;;// path to mail template
 requesttemplate = '../../resources/request_template.html'
+;;// path to imprint 
+pathimprint = './imprint.php'
 ;*/
 ;
