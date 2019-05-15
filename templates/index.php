@@ -24,6 +24,7 @@ $sendOut = false;
     <link rel="stylesheet" href="assets/css/main.css"/>
 
     <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico">
     <link rel="apple-touch-icon-precomposed" href="assets/favicon/house-152-237998.png">
     <meta name="msapplication-TileColor" content="#ffffff"/>
     <meta name="msapplication-TileImage" content="assets/favicon/house-144-237998.png">
