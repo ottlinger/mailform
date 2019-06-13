@@ -2,7 +2,7 @@ language: php
 dist: xenial
 php:
 # not working anymore  - '7.1.27'
-  - '7.2.18'
+  - '7.2.19'
   - '7.3.5'
 # https://github.com/sebastianbergmann/phpunit/issues/2581
 #  - hhvm
