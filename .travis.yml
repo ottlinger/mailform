@@ -1,9 +1,9 @@
 language: php
 dist: xenial
 php:
-# not working anymore  - '7.1.27'
+# not working anymore  - '7.1.30'
   - '7.2.19'
-  - '7.3.5'
+  - '7.3.6'
 # https://github.com/sebastianbergmann/phpunit/issues/2581
 #  - hhvm
 # 201902213
