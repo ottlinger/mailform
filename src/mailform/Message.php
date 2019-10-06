@@ -6,13 +6,13 @@ namespace mailform;
 
 final class Message
 {
-    private $name;
+    private $_name;
     private $email;
     private $contents;
 
     public function __construct($name, $contents, $email)
     {
-        $this->name = FormHelper::filterUserInput($name);
+        $this->_name = FormHelper::filterUserInput($name);
         $this->contents = FormHelper::filterUserInput($contents);
         $this->email = Email::fromString(FormHelper::filterUserInput($email));
     }
@@ -39,7 +39,7 @@ final class Message
 
     public function getName(): string
     {
-        return $this->name;
+        return $this->_name;
     }
 
     public function hasMailErrors(): bool
