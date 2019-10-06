@@ -25,7 +25,7 @@ final class Mailer
         $timestamp = date('Y-m-d H:i:s');
         $subjectLine = 'Mailform - Request received ' . $timestamp;
 
-        $header = $this->createCommonHeaders();
+        $header = $this->_createCommonHeaders();
 
         if ($this->isSendOut() && boolval(Mailer::getFromConfiguration("sendmails"))) {
             // TODO: replace by library to properly handle mail errors
@@ -34,7 +34,7 @@ final class Mailer
         }
     }
 
-    private function createCommonHeaders(): string
+    private function _createCommonHeaders(): string
     {
         $serverName = "localhost";
         if (FormHelper::isSetAndNotEmpty('SERVER_NAME')) {
@@ -54,7 +54,7 @@ final class Mailer
         $timestamp = date('Y-m-d H:i:s');
         $subjectLine = 'Mailform - Request received ' . $timestamp . ' - internal recipient';
 
-        $header = $this->createCommonHeaders();
+        $header = $this->_createCommonHeaders();
         $header .= 'Reply-to: ' . $this->_message->getName() . ' <' . $this->_message->getEmail() . '>' . "\r\n";
 
         if ($this->isSendOut() && boolval(Mailer::getFromConfiguration("sendmails"))) {
