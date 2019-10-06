@@ -100,6 +100,5 @@ final class MailerTest extends TestCase
         $this->assertStringNotContainsString("##IPADDR", $mailtext);
         $this->assertStringNotContainsString("##AGENT", $mailtext);
         $this->assertStringNotContainsString("##MAIL", $mailtext);
-
     }
 }
