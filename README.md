@@ -31,7 +31,7 @@ sudo apt-get install -y php7.2
 ```
 * Additional modules:
 ```
-sudo apt install php7.2-xml php7.2-mbstring php7.2-mysql php7.2-intl php7.2-sqlite3 php-xdebug sqlite3
+sudo apt-get install -y php7.2-xml php7.2-mbstring php7.2-mysql php7.2-intl php7.2-sqlite3 php-xdebug sqlite3
 ```
 #### Mac
 ```
@@ -129,8 +129,8 @@ In case you need to tweak PHP settings:
 http://localhost:8888/phpinfo.php
 might be of use - please remove this file in production deployments!
 
+* https://docs.docker.com/install/linux/docker-ce/ubuntu/ - preferred way on Ubuntu 18.04 as newer versions are supported
 * https://linuxconfig.org/how-to-create-a-docker-based-lamp-stack-using-docker-compose-on-ubuntu-18-04-bionic-beaver-linux
 * https://hub.docker.com/_/php
-* https://docs.docker.com/install/linux/docker-ce/ubuntu/
 
 *HINT!* Even if you enable mail sending this will not work from within the container - you need to deploy the application first :-)
