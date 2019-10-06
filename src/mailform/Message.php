@@ -8,12 +8,12 @@ final class Message
 {
     private $_name;
     private $_email;
-    private $contents;
+    private $_contents;
 
     public function __construct($name, $contents, $email)
     {
         $this->_name = FormHelper::filterUserInput($name);
-        $this->contents = FormHelper::filterUserInput($contents);
+        $this->_contents = FormHelper::filterUserInput($contents);
         $this->_email = Email::fromString(FormHelper::filterUserInput($email));
     }
 
@@ -29,7 +29,7 @@ final class Message
 
     public function getContents(): string
     {
-        return $this->contents;
+        return $this->_contents;
     }
 
     public function hasNameErrors(): bool
