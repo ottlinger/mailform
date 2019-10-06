@@ -5,13 +5,13 @@ namespace mailform;
 
 final class Mailer
 {
-    private $message;
-    private $sendOut;
+    private $_message;
+    private $_sendOut;
 
     public function __construct(Message $message, $sendOut = false)
     {
-        $this->message = $message;
-        $this->sendOut = $sendOut;
+        $this->_message = $message;
+        $this->_sendOut = $sendOut;
     }
 
     public function sendAllMails(): void
@@ -30,7 +30,7 @@ final class Mailer
         if ($this->isSendOut() && boolval(Mailer::getFromConfiguration("sendmails"))) {
             // TODO: replace by library to properly handle mail errors
             // https://github.com/PHPMailer/PHPMailer/wiki/Tutorial
-            mail((string)$this->message->getEmail(), $subjectLine, $this->getRequestMailText(), $header);
+            mail((string)$this->_message->getEmail(), $subjectLine, $this->getRequestMailText(), $header);
         }
     }
 
@@ -55,7 +55,7 @@ final class Mailer
         $subjectLine = 'Mailform - Request received ' . $timestamp . ' - internal recipient';
 
         $header = $this->createCommonHeaders();
-        $header .= 'Reply-to: ' . $this->message->getName() . ' <' . $this->message->getEmail() . '>' . "\r\n";
+        $header .= 'Reply-to: ' . $this->_message->getName() . ' <' . $this->_message->getEmail() . '>' . "\r\n";
 
         if ($this->isSendOut() && boolval(Mailer::getFromConfiguration("sendmails"))) {
             // TODO: replace by library to properly handle mail errors
@@ -74,7 +74,7 @@ final class Mailer
 
     public function isSendOut(): bool
     {
-        return $this->sendOut;
+        return $this->_sendOut;
     }
 
     public function getRequestMailText(): string
@@ -95,11 +95,11 @@ final class Mailer
 
         $templateReplaced = str_replace("##SUBJECT", $subjectLine, $template);
         $templateReplaced = str_replace("##TIMESTAMP", $timestamp, $templateReplaced);
-        $templateReplaced = str_replace("##NAME", $this->message->getName(), $templateReplaced);
-        $templateReplaced = str_replace("##MESSAGE", $this->message->getContents(), $templateReplaced);
+        $templateReplaced = str_replace("##NAME", $this->_message->getName(), $templateReplaced);
+        $templateReplaced = str_replace("##MESSAGE", $this->_message->getContents(), $templateReplaced);
         $templateReplaced = str_replace("##IPADDR", $remoteAddress, $templateReplaced);
         $templateReplaced = str_replace("##AGENT", $userAgent, $templateReplaced);
-        $templateReplaced = str_replace("##MAIL", $this->message->getEmail(), $templateReplaced);
+        $templateReplaced = str_replace("##MAIL", $this->_message->getEmail(), $templateReplaced);
 
         return $templateReplaced;
     }
@@ -128,11 +128,11 @@ final class Mailer
                </tr>
                <tr>
                <td><b>Name:</b></td>
-               <td>" . $this->message->getName() . "</td>
+               <td>" . $this->_message->getName() . "</td>
                </tr>
                <tr>
                <td><b>Message:</b></td>
-               <td>" . $this->message->getContents() . "</td>
+               <td>" . $this->_message->getContents() . "</td>
                </tr>
                <tr>
                <td><b>Caller-IP:</b></td>
@@ -144,7 +144,7 @@ final class Mailer
                </tr>
                <tr>
                <td><b>E-Mail:</b></td>
-               <td>" . $this->message->getEmail() . "</td>
+               <td>" . $this->_message->getEmail() . "</td>
                </tr>
               </table>
             </body>
