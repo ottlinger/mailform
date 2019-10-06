@@ -87,11 +87,10 @@ final class MailerTest extends TestCase
         $this->assertNotEmpty($mailtext);
 
         $this->assertStringContainsString("MyName", $mailtext);
-        $this->assertStringNotContainsString("##NAME", $mailtext);
         $this->assertStringContainsString("MyContents", $mailtext);
-        $this->assertStringNotContainsString("##NAME", $mailtext);
         $this->assertStringContainsString("127.0.0.1", $mailtext);
         $this->assertStringContainsString("MySpecialAgent", $mailtext);
+        $this->assertStringContainsString("foo@bar.com", $mailtext);
 
         // ensure all placeholders are replaced
         $this->assertStringNotContainsString("##SUBJECT", $mailtext);
@@ -100,5 +99,7 @@ final class MailerTest extends TestCase
         $this->assertStringNotContainsString("##MESSAGE", $mailtext);
         $this->assertStringNotContainsString("##IPADDR", $mailtext);
         $this->assertStringNotContainsString("##AGENT", $mailtext);
+        $this->assertStringNotContainsString("##MAIL", $mailtext);
+
     }
 }
