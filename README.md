@@ -129,6 +129,10 @@ In case you need to tweak PHP settings:
 http://localhost:8888/phpinfo.php
 might be of use - please remove this file in production deployments!
 
+##### Docker installation
+
+In order to run the dockerized version on Ubuntu you may follow this installation instruction (please do not forget the postinstallation steps to be able to run as non-root).
+
 * https://docs.docker.com/install/linux/docker-ce/ubuntu/ - preferred way on Ubuntu 18.04 as newer versions are supported
 * https://linuxconfig.org/how-to-create-a-docker-based-lamp-stack-using-docker-compose-on-ubuntu-18-04-bionic-beaver-linux
 * https://hub.docker.com/_/php
