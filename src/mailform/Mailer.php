@@ -99,6 +99,7 @@ final class Mailer
         $templateReplaced = str_replace("##MESSAGE", $this->message->getContents(), $templateReplaced);
         $templateReplaced = str_replace("##IPADDR", $remoteAddress, $templateReplaced);
         $templateReplaced = str_replace("##AGENT", $userAgent, $templateReplaced);
+        $templateReplaced = str_replace("##MAIL", $this->message->getEmail(), $templateReplaced);
 
         return $templateReplaced;
     }
