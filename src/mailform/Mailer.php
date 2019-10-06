@@ -142,6 +142,10 @@ final class Mailer
                <td><b>Caller-Agent:</b></td>
                <td>" . $userAgent . "</td>
                </tr>
+               <tr>
+               <td><b>E-Mail:</b></td>
+               <td>" . $this->message->getEmail() . "</td>
+               </tr>
               </table>
             </body>
             </html>";
