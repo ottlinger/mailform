@@ -5,11 +5,11 @@ namespace mailform;
 
 final class Email
 {
-    private $email;
+    private $_email;
 
     private function __construct(string $email)
     {
-        $this->email = FormHelper::filterUserInput($email);
+        $this->_email = FormHelper::filterUserInput($email);
     }
 
     public static function fromString(string $email): self
@@ -19,12 +19,12 @@ final class Email
 
     public function __toString(): string
     {
-        return $this->email;
+        return $this->_email;
     }
 
     public function isValid(): bool
     {
-        if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
+        if (!filter_var($this->_email, FILTER_VALIDATE_EMAIL)) {
             return false;
         }
         return true;
