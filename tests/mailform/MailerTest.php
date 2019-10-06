@@ -38,6 +38,7 @@ final class MailerTest extends TestCase
         $mailtext = $mailer->getMailText();
         $this->assertStringContainsString("MyName", $mailtext);
         $this->assertStringContainsString("ÄMyContents", $mailtext);
+        $this->assertStringContainsString("foo@bar.com", $mailtext);
         // fallback due to missing global variables
         $this->assertStringContainsString("none", $mailtext);
     }
