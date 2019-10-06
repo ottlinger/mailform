@@ -54,6 +54,7 @@ final class MailerTest extends TestCase
         $this->assertStringContainsString("ÄMyContents", $mailtext);
         $this->assertStringContainsString("127.0.0.1", $mailtext);
         $this->assertStringContainsString("MySpecialAgent", $mailtext);
+        $this->assertStringContainsString("foo@bar.com", $mailtext);
         $this->assertNotEmpty($mailtext);
     }
 
