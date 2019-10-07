@@ -14,7 +14,7 @@
     },
     "autoload": {
         "psr-0": {
-            "mailform\\": "src/"
+            "mailform": "src/"
         },
         "files": [
             "config/config.php"
