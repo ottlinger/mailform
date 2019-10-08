@@ -53,7 +53,7 @@ php composer-setup.php
 php -r "unlink('composer-setup.php');"
 ```
 
-done with version 1.8.4.
+Above example was performed with version 1.8.4.
 
 ### Project init
 
