@@ -119,7 +119,9 @@ $sendOut = false;
                                 <option value="3">Administration</option>
                             </select>
                         </div-->
-                        <div class="col-6 col-12-xsmall"><input type="text" name="mailform-name" id="mailform-name"
+                        <div class="col-6 col-12-xsmall">
+                            <label for="mailform-name">Please provide your name:</label>
+                            <input type="text" name="mailform-name" id="mailform-name"
                                 <?php
                                 if ($hasErrors || boolval(FormHelper::isSetAndNotEmptyInArray($_POST, "mailform-name"))) {
                                     print " value='" . FormHelper::filterUserInput($_POST['mailform-name']) . "' ";
@@ -130,7 +132,9 @@ $sendOut = false;
                                 ?>
                                                                 placeholder="Your name"/>
                         </div>
-                        <div class="col-6 col-12-xsmall"><input type="email" name="mailform-email" id="mailform-email"
+                        <div class="col-6 col-12-xsmall">
+                            <label for="mailform-email">Please provide your email:</label>
+                            <input type="email" name="mailform-email" id="mailform-email"
                                 <?php
                                 if ($hasErrors || boolval(FormHelper::isSetAndNotEmptyInArray($_POST, "mailform-email"))) {
                                     print " value='" . FormHelper::filterUserInput($_POST['mailform-email']) . "' ";
