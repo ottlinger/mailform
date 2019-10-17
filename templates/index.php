@@ -20,7 +20,7 @@ $sendOut = false;
 <head>
     <title>Mailform - example application</title>
     <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
     <link rel="stylesheet" href="assets/css/main.css"/>
 
     <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
