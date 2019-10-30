@@ -25,7 +25,7 @@ final class MailerTest extends TestCase
     {
         $message = new Message("MyName   ", " ÄMyContents", "foo@bar.com ");
         $mailer = new Mailer($message);
-        $mailer->send();
+        $this->assertTrue($mailer->send());
         // https://github.com/sebastianbergmann/phpunit-documentation/issues/171
         // prevent warning about test without assertions
         $this->addToAssertionCount(1);
