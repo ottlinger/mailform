@@ -47,7 +47,7 @@ final class Mailer
         return $header;
     }
 
-    public function sendInternal(): void
+    public function sendInternal(): bool
     {
         $timestamp = date('Y-m-d H:i:s');
         $subjectLine = 'Mailform - Request received ' . $timestamp . ' - internal recipient';
@@ -56,10 +56,9 @@ final class Mailer
         $header .= 'Reply-to: ' . $this->_message->getName() . ' <' . $this->_message->getEmail() . '>' . "\r\n";
 
         if ($this->isSendOut() && boolval(Mailer::getFromConfiguration("sendmails"))) {
-            // TODO: replace by library to properly handle mail errors
-            // https://github.com/PHPMailer/PHPMailer/wiki/Tutorial
-            mail(Mailer::getFromConfiguration("recipient"), $subjectLine, $this->getMailText(), $header);
+            return mail(Mailer::getFromConfiguration("recipient"), $subjectLine, $this->getMailText(), $header);
         }
+        return true;
     }
 
     public static function getFromConfiguration($key): string
