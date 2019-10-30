@@ -16,7 +16,7 @@ final class Mailer
 
     public function sendAllMails(): bool
     {
-        return $this->send() && $this->sendInternal();
+        return $this->sendInternal($this->send());
     }
 
     public function send(): bool
@@ -47,10 +47,14 @@ final class Mailer
         return $header;
     }
 
-    public function sendInternal(): bool
+    public function sendInternal($externalResult): bool
     {
         $timestamp = date('Y-m-d H:i:s');
         $subjectLine = 'Mailform - Request received ' . $timestamp . ' - internal recipient';
+
+        if($externalResult) {
+            $subjectLine .= ' / mail could not be sent to requester, check mail address';
+        }
 
         $header = $this->_createCommonHeaders();
         $header .= 'Reply-to: ' . $this->_message->getName() . ' <' . $this->_message->getEmail() . '>' . "\r\n";
