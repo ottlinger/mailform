@@ -14,13 +14,12 @@ final class Mailer
         $this->_sendOut = $sendOut;
     }
 
-    public function sendAllMails(): void
+    public function sendAllMails(): bool
     {
-        $this->send();
-        $this->sendInternal();
+        return $this->send() && $this->sendInternal();
     }
 
-    public function send(): void
+    public function send(): bool
     {
         $timestamp = date('Y-m-d H:i:s');
         $subjectLine = 'Mailform - Request received ' . $timestamp;
@@ -28,10 +27,9 @@ final class Mailer
         $header = $this->_createCommonHeaders();
 
         if ($this->isSendOut() && boolval(Mailer::getFromConfiguration("sendmails"))) {
-            // TODO: replace by library to properly handle mail errors
-            // https://github.com/PHPMailer/PHPMailer/wiki/Tutorial
-            mail((string)$this->_message->getEmail(), $subjectLine, $this->getRequestMailText(), $header);
+            return mail((string)$this->_message->getEmail(), $subjectLine, $this->getRequestMailText(), $header);
         }
+        return true;
     }
 
     private function _createCommonHeaders(): string
