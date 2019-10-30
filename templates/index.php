@@ -91,14 +91,19 @@ $sendOut = false;
                         print "<h4 style=\"color:red;\">There were errors while submitting the form, please provide all mandatory fields and a valid email.</h4>";
                         $hasErrors = true;
                     } else {
-                        $mailer->sendAllMails();
+                        $sentWithoutErrors = $mailer->sendAllMails();
                         $sendOut = true;
                     }
                 }
 
                 if ($sendOut) {
-                    print "<h4>Thanks for submitting your request at " . date('Y-m-d H:i:s') . "</h4>";
-                    print "<div class=\"col-12\"><p>You may return to our >>> <a href=\"" . Mailer::getFromConfiguration('successlinktarget') . "\">main application page</a></p></div>";
+                    if($sentWithoutErrors) {
+                        print "<h4>Thanks for trying to submit your request at " . date('Y-m-d H:i:s') . "</h4>";
+                        print "<div class=\"col-12\"><p>Due to a technical error your message could not be sent out - please try again later. Sorry for the inconvenience.</p></div>";
+                    } else {
+                        print "<h4>Thanks for submitting your request at " . date('Y-m-d H:i:s') . "</h4>";
+                        print "<div class=\"col-12\"><p>You may return to our >>> <a href=\"" . Mailer::getFromConfiguration('successlinktarget') . "\">main application page</a></p></div>";
+                    }
                 }
                 ?>
 
