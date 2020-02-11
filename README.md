@@ -81,10 +81,10 @@ tests/            # test code
 
 #### PHPUnit setup
 
-https://phpunit.de/getting-started/phpunit-8.html
+https://phpunit.de/getting-started/phpunit-9.html
 
 ```
-$ composer require --dev phpunit/phpunit ^8 (needs a modern PHP)
+$ composer require --dev phpunit/phpunit ^9 (needs a modern PHP)
 ```
 
 #### PHPMailer integration
