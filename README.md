@@ -18,24 +18,24 @@ Allows sending mails to a configured and given mail address.
 ## PHP project init
 ### PHP
 
-Project requires at least PHP 7.2.
+Project requires at least PHP 7.3 in order to run with PHPUnit 9.x.
 
 #### Ubuntu
 Depending on your installation you may need to install a more recent PHP version,
 as I had to do on Ubuntu 18.0.4 LTS:
 https://tecadmin.net/install-php-7-on-ubuntu/
 
-* Upgrade to PHP 7.2
+* Upgrade to PHP 7.4
 ```
-sudo apt-get install -y php7.2
+sudo apt-get install -y php7.4
 ```
 * Additional modules:
 ```
-sudo apt-get install -y php7.2-xml php7.2-mbstring php7.2-mysql php7.2-intl php7.2-sqlite3 php-xdebug sqlite3
+sudo apt-get install -y php7.4-xml php7.4-mbstring php7.4-mysql php7.4-intl php7.4-sqlite3 php-xdebug sqlite3
 ```
 #### Mac
 ```
-$ brew install php@7.2
+$ brew install php@7.4
 ```
 In case you have older versions of PHP installed follow this cleanup procedure:
 https://medium.com/@romaninsh/install-php-7-2-xdebug-on-macos-high-sierra-with-homebrew-july-2018-d7968fe7e8b8
