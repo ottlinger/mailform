@@ -2,7 +2,7 @@ language: php
 dist: xenial
 php:
 # not working anymore  - '7.1.30'
-  - '7.2.19'
+# not compatible with PHPUnit 9  - '7.2.19'
   - '7.3.6'
 # https://github.com/sebastianbergmann/phpunit/issues/2581
 #  - hhvm
