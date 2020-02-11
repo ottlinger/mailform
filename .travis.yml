@@ -4,6 +4,7 @@ php:
 # not working anymore  - '7.1.30'
 # not compatible with PHPUnit 9  - '7.2.19'
   - '7.3.6'
+  - '7.4.2'
 # https://github.com/sebastianbergmann/phpunit/issues/2581
 #  - hhvm
 # 201902213
