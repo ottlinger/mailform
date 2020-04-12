@@ -7,6 +7,8 @@ Allows sending mails to a configured and given mail address.
 
 [![Build Status](https://travis-ci.org/ottlinger/mailform.svg?branch=master)](https://travis-ci.org/ottlinger/mailform)
 
+[![Language grade: PHP](https://img.shields.io/lgtm/grade/php/g/ottlinger/mailform.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/ottlinger/mailform/context:php)
+
 [![codecov](https://codecov.io/gh/ottlinger/mailform/branch/master/graph/badge.svg)](https://codecov.io/gh/ottlinger/mailform)
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/07b670b13aa944a789f40bbdf297b337)](https://www.codacy.com/app/github_25/mailform?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ottlinger/mailform&amp;utm_campaign=Badge_Grade)
