@@ -8,6 +8,7 @@ Allows sending mails to a configured and given mail address.
 [![Build Status](https://travis-ci.org/ottlinger/mailform.svg?branch=master)](https://travis-ci.org/ottlinger/mailform)
 
 [![Language grade: PHP](https://img.shields.io/lgtm/grade/php/g/ottlinger/mailform.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/ottlinger/mailform/context:php)
+The grade is so awful as the project is falsely interpreted as JS instead of PHP!
 
 [![codecov](https://codecov.io/gh/ottlinger/mailform/branch/master/graph/badge.svg)](https://codecov.io/gh/ottlinger/mailform)
 
