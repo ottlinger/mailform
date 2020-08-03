@@ -1,4 +1,5 @@
 <?php
+
 // Check whether the file exists or fallback to the template
 // DEVHINT: it's quite odd that file_exists seems to start at root, while parse takes the relative path from this file
 if (file_exists(dirname(__FILE__).'/mailform-config.php')) {
@@ -17,9 +18,9 @@ if ($isTemplate) {
     ini_set('display_startup_errors', 'on');
     error_reporting(E_ALL);
 
-    print '<pre>';
+    echo '<pre>';
     if ($isTemplate) {
-        print '<strong>You should adapt your configuration and save it as mailform-config.php, currently the dummy template is used, which means NO mail is sent out!</strong>';
+        echo '<strong>You should adapt your configuration and save it as mailform-config.php, currently the dummy template is used, which means NO mail is sent out!</strong>';
     }
-    print '</pre>';
+    echo '</pre>';
 }
