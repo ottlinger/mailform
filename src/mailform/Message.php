@@ -1,8 +1,8 @@
 <?php
+
 declare(strict_types=1);
 
 namespace mailform;
-
 
 final class Message
 {
@@ -51,5 +51,4 @@ final class Message
     {
         return $this->_email;
     }
-
 }

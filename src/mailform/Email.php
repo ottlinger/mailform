@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace mailform;
@@ -27,6 +28,7 @@ final class Email
         if (!filter_var($this->_email, FILTER_VALIDATE_EMAIL)) {
             return false;
         }
+
         return true;
     }
 }
