@@ -13,9 +13,9 @@
         "phpmailer/phpmailer": "^6.0"
     },
     "autoload": {
-        "classmap": [
-            "src/"
-	],
+        "psr-4": {
+            "Mailform\\": "src/mailform"
+        },
         "files": [
             "config/config.php"
         ]
