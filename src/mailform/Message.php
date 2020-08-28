@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace mailform;
+namespace Mailform;
 
 final class Message
 {
