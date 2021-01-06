@@ -12,7 +12,7 @@ The grade is so awful as the project is falsely interpreted as JS instead of PHP
 
 [![codecov](https://codecov.io/gh/ottlinger/mailform/branch/master/graph/badge.svg)](https://codecov.io/gh/ottlinger/mailform)
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/07b670b13aa944a789f40bbdf297b337)](https://www.codacy.com/app/github_25/mailform?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ottlinger/mailform&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/d46db8cba9d04a82940f955790ff6553)](https://www.codacy.com/gh/ottlinger/mailform/dashboard)
 
 [Github Project Mailform](https://github.com/users/ottlinger/projects/1?add_cards_query=is%3Aopen)
 
