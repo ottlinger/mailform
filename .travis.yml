@@ -3,7 +3,7 @@ dist: bionic
 php:
 # not working anymore  - '7.1.30'
 # not compatible with PHPUnit 9  - '7.2.27'
-  - '7.3.22'
+# EOL 20211206  - '7.3.22'
   - '7.4.10'
 # https://github.com/sebastianbergmann/phpunit/issues/2581
 #  - hhvm
