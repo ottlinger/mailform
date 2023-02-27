@@ -2,6 +2,7 @@ name: CI
 
 on: [push]
 
+# git show 7fe70e20d965116236fa0bae8132d46d043647f5
 jobs:
   build-test:
     runs-on: ubuntu-latest
@@ -13,3 +14,5 @@ jobs:
       with:
         configuration: "phpunit.xml"
         coverage_clover: "coverage.xml"
+        version: "8.2"
+        php_version: "7.4.10"
