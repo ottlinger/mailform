@@ -1,14 +1,12 @@
 # mailform
+
 Send out a given mail via a web form.
 
 Allows sending mails to a configured and given mail address.
 
-## Badges - remote integrations
+## Badges for Github integration
 
-[![Build Status](https://travis-ci.org/ottlinger/mailform.svg?branch=master)](https://travis-ci.org/ottlinger/mailform)
-
-[![Language grade: PHP](https://img.shields.io/lgtm/grade/php/g/ottlinger/mailform.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/ottlinger/mailform/context:php)
-The grade is so awful as the project is falsely interpreted as JS instead of PHP!
+[![GHA build status](https://github.com/ottlinger/mailform/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/ottlinger/mailform/actions)
 
 [![codecov](https://codecov.io/gh/ottlinger/mailform/branch/master/graph/badge.svg)](https://codecov.io/gh/ottlinger/mailform)
 
@@ -17,6 +15,9 @@ The grade is so awful as the project is falsely interpreted as JS instead of PHP
 [Github Project Mailform](https://github.com/users/ottlinger/projects/1?add_cards_query=is%3Aopen)
 
 [![Apache v2.0](https://img.shields.io/github/license/ottlinger/mailform.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
+
+[![Language grade: PHP](https://img.shields.io/lgtm/grade/php/g/ottlinger/mailform.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/ottlinger/mailform/context:php)
+The grade is so awful as the project is falsely interpreted as JS instead of PHP!
 
 ## PHP project init
 ### PHP
