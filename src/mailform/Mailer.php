@@ -28,7 +28,7 @@ final class Mailer
         $header = $this->_createCommonHeaders();
 
         if ($this->isSendOut() && boolval(Mailer::getFromConfiguration('sendmails'))) {
-            return mail((string) $this->_message->getEmail(), $subjectLine, $this->getRequestMailText(), $header);
+            return mail(strval($this->_message->getEmail()), $subjectLine, $this->getRequestMailText(), $header);
         }
 
         return true;
@@ -60,7 +60,7 @@ final class Mailer
         }
 
         $header = $this->_createCommonHeaders();
-        $header .= 'Reply-to: '.$this->_message->getName().' <'.$this->_message->getEmail().'>'."\r\n";
+        $header .= 'Reply-to: '.$this->_message->getName().' <'.strval($this->_message->getEmail()).'>'."\r\n";
 
         if ($this->isSendOut() && boolval(Mailer::getFromConfiguration('sendmails'))) {
             return mail(Mailer::getFromConfiguration('recipient'), $subjectLine, $this->getMailText(), $header);
@@ -105,7 +105,7 @@ final class Mailer
         $templateReplaced = str_replace('##MESSAGE', $this->_message->getContents(), $templateReplaced);
         $templateReplaced = str_replace('##IPADDR', $remoteAddress, $templateReplaced);
         $templateReplaced = str_replace('##AGENT', $userAgent, $templateReplaced);
-        $templateReplaced = str_replace('##MAIL', (string) $this->_message->getEmail(), $templateReplaced);
+        $templateReplaced = str_replace('##MAIL', strval($this->_message->getEmail()), $templateReplaced);
 
         return $templateReplaced;
     }
@@ -150,7 +150,7 @@ final class Mailer
                </tr>
                <tr>
                <td><b>E-Mail:</b></td>
-               <td>'.$this->_message->getEmail().'</td>
+               <td>'.strval($this->_message->getEmail()).'</td>
                </tr>
               </table>
             </body>
