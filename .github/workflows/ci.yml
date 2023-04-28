@@ -17,6 +17,6 @@ jobs:
         configuration: "phpunit.xml"
         coverage_clover: "coverage.xml"
         version: "9.6.7"
-        php_version: "7.4.10"
+        php_version: "8.2"
 
 # TODO: integrate Coverage https://about.codecov.io/blog/measuring-php-code-coverage-with-phpunit-and-github-actions/        
