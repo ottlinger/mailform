@@ -4,7 +4,7 @@
 @import 'libs/vendor';
 @import 'libs/breakpoints';
 @import 'libs/html-grid';
-@import url('font-awesome.min.css');
+@import url('fontawesome-all.min.css');
 @import url("https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic|Source+Code+Pro:400");
 
 /*
@@ -467,7 +467,7 @@
 		z-index: -1;
 
 		& + label {
-			@include icon;
+			@include icon(false, solid);
 			color: _palette(fg);
 			cursor: pointer;
 			display: inline-block;
@@ -483,13 +483,14 @@
 				border: solid _size(border-width) _palette(border2);
 				content: '';
 				display: inline-block;
-				height: (_size(element-height) * 0.6);
+				font-size: 0.8em;
+				height: (_size(element-height) * 0.75);
 				left: 0;
-				line-height: (_size(element-height) * 0.575);
+				line-height: (_size(element-height) * 0.75);
 				position: absolute;
 				text-align: center;
 				top: 0;
-				width: (_size(element-height) * 0.6);
+				width: (_size(element-height) * 0.75);
 			}
 		}
 
@@ -579,6 +580,22 @@
 
 		> .label {
 			display: none;
+		}
+
+		&:before {
+			line-height: inherit;
+		}
+
+		&.solid {
+			&:before {
+				font-weight: 900;
+			}
+		}
+
+		&.brands {
+			&:before {
+				font-family: 'Font Awesome 5 Brands';
+			}
 		}
 	}
 
@@ -1505,7 +1522,7 @@
 				}
 
 				.toggle {
-					@include icon;
+					@include icon(false, solid);
 					height: 4em;
 					position: absolute;
 					top: 0;

@@ -20,7 +20,7 @@ if ($isTemplate) {
 
     echo '<pre>';
     if ($isTemplate) {
-        echo '<strong>You should adapt your configuration and save it as mailform-config.php, currently the dummy template is used, which means NO mail is sent out!</strong>';
+        echo '<strong>You should adapt your configuration and save it as mailform-config.php, <br />currently the dummy template is used, which means NO mail is sent out!</strong>';
     }
     echo '</pre>';
 }
