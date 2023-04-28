@@ -237,7 +237,7 @@ $sendOut = false;
         <div class="container">
             <ul class="copyright">
                 <li>&copy; Mailform, <?php echo date('Y-m-d'); ?> All rights reserved.</li>
-                <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+                <li>Design: <a href="https://html5up.net">HTML5 UP ReadOnly</a></li>
                 <li>Served by <a href="https://www.github.com/ottlinger/mailform">Mailform</a> from <a
                         href="https://aiki-it.de">AIKI IT</a></li>
             </ul>
