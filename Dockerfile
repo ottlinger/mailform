@@ -1,5 +1,5 @@
 # https://hub.docker.com/_/php/
-FROM php:7.4-cli
+FROM php:8.2-cli
 COPY . /usr/src/myapp
 WORKDIR /usr/src/myapp
 CMD [ "php", "./templates/index.php" ]
