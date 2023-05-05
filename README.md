@@ -1,6 +1,6 @@
 # mailform
 
-Send out a given mail via a web form.
+Send out a given mail via a web form. A running live-demo is deployed at https://mailform.aiki-it.de
 
 Allows sending mails to a configured and given mail address.
 
