@@ -19,6 +19,6 @@ jobs:
         version: "9.6.10"
         php_version: "8.2"
 
-# TODO: integrate Coverage https://about.codecov.io/blog/measuring-php-code-coverage-with-phpunit-and-github-actions/        
-      - name: Code coverage with codecov
-        uses: codecov/codecov-action@v3
+# TODO: integrate Coverage https://about.codecov.io/blog/measuring-php-code-coverage-with-phpunit-and-github-actions/
+    - name: Code coverage with codecov
+      uses: codecov/codecov-action@v3
