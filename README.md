@@ -16,9 +16,6 @@ Allows sending mails to a configured and given mail address.
 
 [![Apache v2.0](https://img.shields.io/github/license/ottlinger/mailform.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
-[![Language grade: PHP](https://img.shields.io/lgtm/grade/php/g/ottlinger/mailform.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/ottlinger/mailform/context:php)
-The grade is so awful as the project is falsely interpreted as JS instead of PHP!
-
 ## PHP project init
 ### PHP
 
