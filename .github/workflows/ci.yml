@@ -12,6 +12,8 @@ jobs:
     - uses: php-actions/composer@v6 # or alternative dependency management
     - name: PHPUnit tests
       uses: php-actions/phpunit@v3
+      env:
+        XDEBUG_MODE: coverage
       with:
         php_extensions: "xdebug mbstring xml curl"
         configuration: "./phpunit.xml"
