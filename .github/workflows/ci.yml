@@ -15,6 +15,7 @@ jobs:
       env:
         XDEBUG_MODE: coverage
       with:
+        test_suffix: "Test.php" # get rid of warning after updating to PHPUnit11
         php_extensions: "xdebug mbstring xml curl"
         configuration: "./phpunit.xml"
         coverage_clover: "coverage.xml"
