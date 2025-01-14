@@ -16,8 +16,8 @@ jobs:
         php_extensions: "xdebug mbstring xml"
         configuration: "phpunit.xml"
         coverage_clover: "coverage.xml"
-        version: "9.6.19"
-        php_version: "8.2"
+        version: "11.5.3"
+        php_version: "8.3"
 
 # TODO: integrate Coverage https://about.codecov.io/blog/measuring-php-code-coverage-with-phpunit-and-github-actions/
     - name: Code coverage with codecov
