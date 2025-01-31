@@ -19,7 +19,7 @@ jobs:
         php_extensions: "xdebug mbstring xml curl"
         configuration: "./phpunit.xml"
         coverage_clover: "coverage.xml"
-        version: "11.5.5"
+        version: "11.5.6"
         php_version: "8.3"
 
     - name: Code coverage with codecov
