@@ -20,7 +20,7 @@ jobs:
         configuration: "./phpunit.xml"
         coverage_clover: "coverage.xml"
         version: "12.2.7"
-        php_version: latest # "8.4"
+        # php_version: latest # "8.4"
 
     - name: Code coverage with codecov
       uses: codecov/codecov-action@v4
