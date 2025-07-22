@@ -94,6 +94,13 @@ In order to integrate PHPMailer you may want to run:
 $ composer require phpmailer/phpmailer
 ```
 
+#### PHPMailer integration
+
+In order to verify your code structure, you may use the [PHP_CodeSniffer](https://github.com/PHPCSStandards/PHP_CodeSniffer/):
+```
+$ ./vendor/bin/phpcs -v ./src/
+```
+
 #### Templates
 
 The mail form web template is based on [Html5UP ReadOnly](https://html5up.net/read-only/download)
