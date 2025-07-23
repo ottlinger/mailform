@@ -3,6 +3,7 @@
     "description": "Web application that sends out mails via a contact form.",
     "type": "application",
     "license": "Apache-2.0",
+    "version": "1.0.0",
     "authors": [
         {
             "name": "Hugo Hirsch",
