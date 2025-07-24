@@ -9,7 +9,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - uses: php-actions/composer@v6 # v6 runs with a different PHP version that fails due to dependency errors
+    - uses: php-actions/composer@v6
       with:
         php_version: "8.4.10"
     - name: PHPUnit tests
