@@ -1,7 +1,7 @@
 version: '3'
 services:
     php-apache:
-        image: php:8.3.15-apache
+        image: php:8.4.10-apache
         ports:
             - 8888:80
         volumes:
