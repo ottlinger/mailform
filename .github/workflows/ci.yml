@@ -2,7 +2,6 @@ name: CI
 
 on: [push]
 
-# git show 7fe70e20d965116236fa0bae8132d46d043647f5
 jobs:
   build-test:
     runs-on: ubuntu-latest
