@@ -17,7 +17,23 @@ Allows sending mails to a configured and given mail address.
 ## PHP project init
 ### PHP
 
-Project requires at least PHP 8.3 in order to run with PHPUnit 11.x.
+Project requires at least PHP 8.3 in order to run with PHPUnit 12.x.
+
+### Running tests locally
+
+In order to launch tests locally it may make sense to define the following alias:
+
+```
+alias phpunit='export export XDEBUG_MODE=coverage; ./vendor/bin/phpunit'
+```
+
+and run
+
+```
+$ phpunit
+```
+
+in the project's base directory.
 
 #### Ubuntu
 Depending on your installation you may need to install a more recent PHP version,
@@ -94,7 +110,7 @@ In order to integrate PHPMailer you may want to run:
 $ composer require phpmailer/phpmailer
 ```
 
-#### PHPMailer integration
+#### PHP CodeSniffer integration
 
 In order to verify your code structure, you may use the [PHP_CodeSniffer](https://github.com/PHPCSStandards/PHP_CodeSniffer/):
 ```
