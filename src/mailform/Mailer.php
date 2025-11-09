@@ -28,7 +28,11 @@ final class Mailer
         $header = $this->_createCommonHeaders();
 
         if ($this->isSendOut() && boolval(Mailer::getFromConfiguration('sendmails'))) {
-            return mail(strval($this->_message->getEmail()), $subjectLine, $this->getRequestMailText(), $header);
+            $success = mail(strval($this->_message->getEmail()), $subjectLine, $this->getRequestMailText(), $header);
+            if (!$success && boolval(Mailer::getFromConfiguration('debug'))) {
+                echo error_get_last()['message'];
+            }
+            return $success;
         }
 
         return true;

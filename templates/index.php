@@ -225,7 +225,15 @@ $sendOut = false;
                         }
                         ?>
                     </div>
+
+                    <?php
+                    if ($_SERVER['REQUEST_METHOD'] != 'POST' || $hasErrors) {
+                    ?>
                 </form>
+                        <?php
+                } // end if not POST
+                ?>
+
             </div>
         </section>
 
