@@ -5,7 +5,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <?php
-require_once __DIR__.'/../vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 use mailform\FormHelper;
 use mailform\Mailer;
@@ -36,8 +36,6 @@ $sendOut = false;
     <link rel="icon" href="assets/favicon/house-32-237998.png" sizes="32x32">
 </head>
 <body class="is-preload">
-
-<!-- Header -->
 <section id="header">
     <header>
         <span class="image avatar"><img src="images/avatar.jpg" alt=""/></span>
@@ -51,24 +49,26 @@ $sendOut = false;
     </nav>
     <footer>
         <ul class="icons">
-		<?php
-                    echo '<li><a target="_blank" href="'.Mailer::getFromConfiguration('pathimprint').'">imprint</a></li>';
-                    echo '<li><a target="_blank" href="'.Mailer::getFromConfiguration('pathgdpr').'">data protection information (GDPR)</a></li><br /><br />';
-        ?>
-            <li>Feedback via <a href="https://www.github.com/ottlinger/mailform" target="_blank" class="icon brands fa-github"><span
-                        class="label">GitHub</span> GitHub</a></li><br />
+            <?php
+            if (!empty(Mailer::getFromConfiguration('pathimprint'))) {
+                echo '<li><a target="_blank" href="' . Mailer::getFromConfiguration('pathimprint') . '">Impressum</a></li>';
+            }
+            if (!empty(Mailer::getFromConfiguration('pathgdpr'))) {
+                echo '<li><a target="_blank" href="' . Mailer::getFromConfiguration('pathgdpr') . '">data protection information (GDPR)</a></li><br /><br />';
+            }
+            echo '<br /><br />';
+            ?>
+            <li>Feedback via <a href="https://www.github.com/ottlinger/mailform" target="_blank"
+                                class="icon brands fa-github"><span
+                        class="label">GitHub</span> GitHub</a></li>
+            <br/>
             <li><a href="https://aiki-it.de" target="_blank">Powered by AIKI IT</a></li>
         </ul>
     </footer>
 </section>
 
-<!-- Wrapper -->
 <div id="wrapper">
-
-    <!-- Main -->
     <div id="main">
-
-        <!-- Contact form -->
         <section id="contact">
             <div class="container">
                 <h3>Mailform example application</h3>
@@ -90,28 +90,28 @@ $sendOut = false;
                         echo '<h4 style="color:red;">There were errors while submitting the form, please provide all mandatory fields and a valid email.</h4>';
                         $hasErrors = true;
                     } else {
-                        $sentWithoutErrors = $mailer->sendAllMails();
                         $sendOut = true;
+                        $sentWithoutErrors = $mailer->sendAllMails();
                     }
                 }
 
                 if ($sendOut) {
                     if ($sentWithoutErrors) {
-                        echo '<h4>Thanks for trying to submit your request at '.date('Y-m-d H:i:s').'</h4>';
+                        echo '<h4>Thanks for trying to submit your request at ' . date('Y-m-d H:i:s') . '</h4>';
                         echo '<div class="col-12"><p>Due to a technical error your message could not be sent out - please try again later. Sorry for the inconvenience.</p></div>';
                     } else {
-                        echo '<h4>Thanks for submitting your request at '.date('Y-m-d H:i:s').'</h4>';
+                        echo '<h4>Thanks for submitting your request at ' . date('Y-m-d H:i:s') . '</h4>';
                     }
-                    echo '<div class="col-12"><p>You may return to our >>> <a href="'.Mailer::getFromConfiguration('successlinktarget').'">main application page</a></p></div>';
+                    echo '<div class="col-12"><p>You may return to our >>> <a href="' . Mailer::getFromConfiguration('successlinktarget') . '">main application page</a></p></div>';
                 }
                 ?>
 
                 <?php
                 if ($_SERVER['REQUEST_METHOD'] != 'POST' || $hasErrors) {
-                    ?>
+                ?>
                 <form method="post" action="#">
                     <?php
-                } // end if not POST
+                    } // end if not POST
                     ?>
                     <div class="row gtr-uniform">
                         <!-- TODO generify: all mailform-something ids are selected and put into the mail -->
@@ -128,27 +128,27 @@ $sendOut = false;
                             <input type="text" name="mailform-name" id="mailform-name"
                                 <?php
                                 if ($hasErrors || boolval(FormHelper::isSetAndNotEmptyInArray($_POST, 'mailform-name'))) {
-                                    echo " value='".FormHelper::filterUserInput($_POST['mailform-name'])."' ";
-                                    if ($message->hasNameErrors()) {
+                                    echo " value='" . FormHelper::filterUserInput($_POST['mailform-name']) . "' ";
+                                    if (!empty($message) && $message->hasNameErrors()) {
                                         echo ' style="border-color: red;" ';
                                     }
                                 }
                                 ?>
-                                                                placeholder="Your name"/>
+                                   placeholder="Your name"/>
                         </div>
                         <div class="col-6 col-12-xsmall">
                             <label for="mailform-email">Please provide your email:</label>
                             <input type="email" name="mailform-email" id="mailform-email"
                                 <?php
                                 if ($hasErrors || boolval(FormHelper::isSetAndNotEmptyInArray($_POST, 'mailform-email'))) {
-                                    echo " value='".FormHelper::filterUserInput($_POST['mailform-email'])."' ";
-                                    if ($message->hasMailErrors()) {
+                                    echo " value='" . FormHelper::filterUserInput($_POST['mailform-email']) . "' ";
+                                    if (!empty($message) && $message->hasMailErrors()) {
                                         echo ' style="border-color: red;" ';
                                     }
                                 }
                                 ?>
 
-                                                                placeholder="Your email"/></div>
+                                   placeholder="Your email"/></div>
                         <div class="col-12">
                             <label for="mailform-message">We are looking forward to your message:</label>
                             <textarea name="mailform-message" id="mailform-message" placeholder="Your message"
@@ -230,15 +230,14 @@ $sendOut = false;
                     if ($_SERVER['REQUEST_METHOD'] != 'POST' || $hasErrors) {
                     ?>
                 </form>
-                        <?php
-                } // end if not POST
-                ?>
+            <?php
+            } // end if not POST
+            ?>
 
             </div>
         </section>
 
     </div>
-
     <!-- Footer -->
     <section id="footer">
         <div class="container">
@@ -251,8 +250,6 @@ $sendOut = false;
         </div>
     </section>
 </div>
-
-<!-- Scripts -->
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/jquery.scrollex.min.js"></script>
 <script src="assets/js/jquery.scrolly.min.js"></script>
@@ -260,6 +257,5 @@ $sendOut = false;
 <script src="assets/js/breakpoints.min.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
-
 </body>
 </html>

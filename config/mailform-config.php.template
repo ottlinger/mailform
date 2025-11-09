@@ -22,9 +22,9 @@ successlinktarget = './index.php'
 debug = false;
 ;;// path to mail template
 requesttemplate = '../../resources/request_template.html'
-;;// path to imprint
+;;// path to imprint, set to empty if unwanted
 pathimprint = './imprint.php'
-;;// path to GDPR
+;;// path to GDPR, set to empty if unwanted
 pathgdpr = './dsgvo.php'
 ;*/
 ;
