@@ -32,6 +32,7 @@ final class Mailer
             if (!$success && boolval(Mailer::getFromConfiguration('debug'))) {
                 echo error_get_last()['message'];
             }
+
             return $success;
         }
 
@@ -110,6 +111,7 @@ final class Mailer
         $templateReplaced = str_replace('##IPADDR', $remoteAddress, $templateReplaced);
         $templateReplaced = str_replace('##AGENT', $userAgent, $templateReplaced);
         $templateReplaced = str_replace('##MAIL', strval($this->_message->getEmail()), $templateReplaced);
+
         return $templateReplaced;
     }
 
