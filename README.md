@@ -4,7 +4,7 @@ Send out a given mail via a web form. A running live-demo is deployed at https:/
 
 Allows sending mails to a configured and given mail address.
 
-## Badges for Github integration
+## Badges for GitHub integrations
 
 [![GHA build status](https://github.com/ottlinger/mailform/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/ottlinger/mailform/actions)
 
