@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Mailform\Email;
+use mailform\Email;
 use PHPUnit\Framework\TestCase;
 
 final class EmailTest extends TestCase
