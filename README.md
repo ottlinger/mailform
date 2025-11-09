@@ -12,6 +12,8 @@ Allows sending mails to a configured and given mail address.
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/d46db8cba9d04a82940f955790ff6553)](https://app.codacy.com/gh/ottlinger/mailform/dashboard)
 
+[![StyleCI](https://github.styleci.io/repos/172128768/shield?branch=master)](https://github.styleci.io/repos/172128768?branch=master)
+
 [![Apache v2.0](https://img.shields.io/github/license/ottlinger/mailform.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 ## PHP project init
