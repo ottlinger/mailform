@@ -243,9 +243,9 @@ $sendOut = false;
         <div class="container">
             <ul class="copyright">
                 <li>&copy; Mailform, 2020-<?php echo date('Y'); ?> All rights reserved.</li>
-                <li>Template based on <a target="_blank" href="https://html5up.net">HTML5 UP ReadOnly</a></li>
+                <li>Template <a target="_blank" href="https://html5up.net">HTML5 UP ReadOnly</a></li>
                 <li>Served by <a target="_blank" href="https://www.github.com/ottlinger/mailform">Mailform</a> from <a
-                        target="_blank" href="https://aiki-it.de">AIKI IT</a> - v<?php phpversion(); ?></li>
+                        target="_blank" href="https://aiki-it.de">AIKI IT</a> v<?php echo phpversion(); ?></li>
             </ul>
         </div>
     </section>
