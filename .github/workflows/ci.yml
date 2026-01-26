@@ -13,7 +13,7 @@ jobs:
     - uses: actions/checkout@v6
     - uses: php-actions/composer@v6
       with:
-        php_version: "8.4.10"
+        php_version: "8.4.16"
     - name: PHPUnit tests
       uses: php-actions/phpunit@v4
       env:
