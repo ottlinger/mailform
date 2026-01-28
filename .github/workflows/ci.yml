@@ -13,7 +13,7 @@ jobs:
     - uses: actions/checkout@v6
     - uses: php-actions/composer@v6
       with:
-        php_version: "8.4.16"
+        php_version: "8.4.17"
     - name: PHPUnit tests
       uses: php-actions/phpunit@v4
       env:
@@ -23,8 +23,8 @@ jobs:
         php_extensions: "xdebug mbstring xml curl"
         configuration: "./phpunit.xml"
         coverage_clover: "coverage.xml"
-        version: "12.5.6" # keep in sync with composer version
-        php_version: "8.4.16"
+        version: "12.5.8" # keep in sync with composer version
+        php_version: "8.4.17"
 
     - name: Code coverage with codecov
       uses: codecov/codecov-action@v5
