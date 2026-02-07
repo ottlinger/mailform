@@ -47,6 +47,7 @@ sudo apt update
 * Upgrade to PHP 8.4
 ```
 sudo apt-get install -y php8.4
+sudo update-alternatives --set php /usr/bin/php8.4
 ```
 * Additional modules:
 ```
