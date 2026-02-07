@@ -19,7 +19,7 @@ Allows sending mails to a configured and given mail address.
 ## PHP project init
 ### PHP
 
-Project requires at least PHP 8.3 in order to run with PHPUnit 12.x.
+Project requires at least PHP 8.4.1 in order to run with PHPUnit 13.x.
 
 ### Running tests locally
 
@@ -38,13 +38,15 @@ $ phpunit
 in the project's base directory.
 
 #### Ubuntu
-Depending on your installation you may need to install a more recent PHP version,
-as I had to do on Ubuntu 18.0.4 LTS:
-https://tecadmin.net/install-php-7-on-ubuntu/
-
-* Upgrade to PHP 8.3
+Depending on your installation you may need to install a more recent PHP version:
 ```
-sudo apt-get install -y php8.3
+sudo add-apt-repository ppa:ondrej/php
+sudo add-apt-repository ppa:ondrej/apache2
+sudo apt update
+```
+* Upgrade to PHP 8.4
+```
+sudo apt-get install -y php8.4
 ```
 * Additional modules:
 ```
@@ -52,7 +54,7 @@ sudo apt-get install -y php-curl php-xml php-mbstring php-mysql php-intl php-sql
 ```
 #### Mac
 ```
-$ brew install php@8.3
+$ brew install php@8.4
 ```
 In case you have older versions of PHP installed follow this cleanup procedure:
 https://medium.com/@romaninsh/install-php-7-2-xdebug-on-macos-high-sierra-with-homebrew-july-2018-d7968fe7e8b8
@@ -78,6 +80,15 @@ Above example was performed with version 1.8.4.
 $ ./composer.phar init
 $ ./composer.phar validate
 ```
+
+### Composer updates
+
+If you are constantly updating composer itself, you may have to update your PHP version as well, so 
+run
+```
+$ ./composer.phar selfupdate
+```
+regularly.
 
 #### Project layout
 
