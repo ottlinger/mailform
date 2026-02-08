@@ -51,7 +51,7 @@ sudo update-alternatives --set php /usr/bin/php8.4
 ```
 * Additional modules:
 ```
-sudo apt-get install -y php-curl php-xml php-mbstring php-mysql php-intl php-sqlite3 php-xdebug php-pcov sqlite3
+sudo apt-get install -y php-curl php-xml php-mbstring php-mysql php-intl php-sqlite3 php-xdebug sqlite3
 ```
 #### Mac
 ```
