@@ -24,6 +24,7 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^13.0",
-        "squizlabs/php_codesniffer": "^4.0"
+        "squizlabs/php_codesniffer": "^4.0",
+        "phpunit/php-code-coverage": "^13.0"
     }
 }
