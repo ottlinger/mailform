@@ -53,6 +53,9 @@ sudo update-alternatives --set php /usr/bin/php8.4
 ```
 sudo apt-get install -y php-curl php-xml php-mbstring php-mysql php-intl php-sqlite3 php-xdebug sqlite3
 ```
+
+If you have multiple PHP versions install, it may help to e.g. install version-specific modules such as php8.4-xdebug.
+
 #### Mac
 ```
 $ brew install php@8.4
