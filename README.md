@@ -26,7 +26,7 @@ Project requires at least PHP 8.4.1 in order to run with PHPUnit 13.x.
 In order to launch tests locally it may make sense to define the following alias:
 
 ```
-alias phpunit='export export XDEBUG_MODE=coverage; ./vendor/bin/phpunit'
+alias phpunit='export XDEBUG_MODE=coverage; ./vendor/bin/phpunit'
 ```
 
 and run
@@ -55,6 +55,7 @@ sudo apt-get install -y php-curl php-xml php-mbstring php-mysql php-intl php-sql
 ```
 
 If you have multiple PHP versions install, it may help to e.g. install version-specific modules such as php8.4-xdebug.
+Furthermore you should enable the module via ```phpenmod/a2enmod``` and restart your Apache2 installation with `sudo systemctl restart apache2`.
 
 #### Mac
 ```
