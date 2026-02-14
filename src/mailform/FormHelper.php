@@ -16,7 +16,14 @@ class FormHelper
         return self::isSetAndNotEmptyInArray($_SERVER, $key);
     }
 
-    private static function isSetAndNotEmptyInArray($array, $key): bool
+    /**
+     * Returns true if the given key is found in the array, false otherwise.
+     *
+     * @param $array
+     * @param $key
+     * @return bool
+     */
+    public static function isSetAndNotEmptyInArray($array, $key): bool
     {
         // array_key_exists($key, $array) is similar but not null-safe
         if (isset($array) && isset($key)) {
