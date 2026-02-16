@@ -60,6 +60,7 @@ Furthermore you should enable the module via ```phpenmod/a2enmod``` and restart 
 #### Mac
 ```
 $ brew install php@8.4
+$ echo 'export PATH="/opt/homebrew/opt/php@8.4/bin:$PATH"' >> ~/.zshrc 
 ```
 In case you have older versions of PHP installed follow this cleanup procedure:
 https://medium.com/@romaninsh/install-php-7-2-xdebug-on-macos-high-sierra-with-homebrew-july-2018-d7968fe7e8b8
