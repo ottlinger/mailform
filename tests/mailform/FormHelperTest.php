@@ -13,5 +13,3 @@ final class FormHelperTest extends TestCase
         $this->assertEquals('//woo&amp;&quot;', FormHelper::filterUserInput('   \\//woo&"'));
     }
 }
-
-
