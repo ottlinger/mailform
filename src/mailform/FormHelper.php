@@ -21,6 +21,7 @@ class FormHelper
      *
      * @param $array
      * @param $key
+     *
      * @return bool
      */
     public static function isSetAndNotEmptyInArray($array, $key): bool
