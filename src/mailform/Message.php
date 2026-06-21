@@ -6,9 +6,9 @@ namespace mailform;
 
 final class Message
 {
-    private $_name;
-    private $_email;
-    private $_contents;
+    private string $_name;
+    private Email $_email;
+    private string $_contents;
 
     public function __construct($name, $contents, $email)
     {

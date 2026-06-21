@@ -11,7 +11,7 @@ class FormHelper
      *
      * @return bool
      */
-    public static function isSetAndNotEmpty($key)
+    public static function isSetAndNotEmpty($key): bool
     {
         return self::isSetAndNotEmptyInArray($_SERVER, $key);
     }

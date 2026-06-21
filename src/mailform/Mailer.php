@@ -6,8 +6,8 @@ namespace mailform;
 
 final class Mailer
 {
-    private $_message;
-    private $_sendOut;
+    private Message $_message;
+    private bool $_sendOut;
 
     public function __construct(Message $message, $sendOut = false)
     {
@@ -65,7 +65,7 @@ final class Mailer
         }
 
         $header = $this->_createCommonHeaders();
-        $header .= 'Reply-to: '.$this->_message->getName().' <'.strval($this->_message->getEmail()).'>'."\r\n";
+        $header .= 'Reply-to: '.$this->_message->getName().' <'.$this->_message->getEmail().'>'."\r\n";
 
         if ($this->isSendOut() && boolval(Mailer::getFromConfiguration('sendmails'))) {
             return mail(Mailer::getFromConfiguration('recipient'), $subjectLine, $this->getMailText(), $header);
@@ -154,7 +154,7 @@ final class Mailer
                </tr>
                <tr>
                <td><b>E-Mail:</b></td>
-               <td>'.strval($this->_message->getEmail()).'</td>
+               <td>'.$this->_message->getEmail().'</td>
                </tr>
               </table>
             </body>
