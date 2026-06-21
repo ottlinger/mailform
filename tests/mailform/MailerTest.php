@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use mailform\Mailer;
-use mailform\Message;
+namespace mailform;
+
 use PHPUnit\Framework\TestCase;
 
 final class MailerTest extends TestCase
